@@ -1,0 +1,1949 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Les variables aléatoires &#8212; Projet de Rapport cantonal</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'random_variables';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Rapport Cantonal: Valais" href="cantonal_report.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="titlepage.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Projet de Rapport cantonal</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cantonal_report.html">1. Rapport Cantonal: Valais</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Les variables aléatoires</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hammerdirt-analyst/solid-waste-team" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hammerdirt-analyst/solid-waste-team/issues/new?title=Issue%20on%20page%20%2Frandom_variables.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Les variables aléatoires</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-contexte-de-l-observation">2.1. Le contexte de l’observation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultats-d-inventaire">2.1.1. Résultats d’inventaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#debut-nov-2015-fin-decembre-2022">2.1.1.1. Début: nov 2015, fin: décembre 2022</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-du-site-d-inventaire">2.1.2. Détails du site d’inventaire</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories-d-objets">2.1.3. Catégories d’objets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-sol">2.1.4. Utilisation du sol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cantonal">2.1.5. Cantonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional">2.1.6. Régional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal">2.1.7. Municipal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#echantillons-de-bord-des-rivieres">2.1.8. Échantillons de bord des rivières</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#echantillons-sentiers-pedestre">2.1.9. Échantillons sentiers pédèstre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-dimensionnelles">2.1.10. Données dimensionnelles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">2.1.11. Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ensemble-de-donnees-pour-le-lac">2.2. L’ensemble de données pour le lac</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">slugify</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">md</span>
+<span class="o">%</span><span class="k">load_ext</span> watermark
+
+
+<span class="c1"># this defines the css rules for the note-book table displays</span>
+<span class="n">header_row</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;th:nth-child(1)&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;background-color: #FFF; text-align:right&#39;</span><span class="p">}</span>
+<span class="n">even_rows</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;selector&quot;</span><span class="p">:</span> <span class="s1">&#39;tr:nth-child(even)&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;background-color: rgba(139, 69, 19, 0.08);&#39;</span><span class="p">}</span>
+<span class="n">odd_rows</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;tr:nth-child(odd)&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="s1">&#39;background: #FFF;&#39;</span><span class="p">}</span>
+<span class="n">table_font</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;tr&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="s1">&#39;font-size: 10px;&#39;</span><span class="p">}</span>
+<span class="n">table_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;td&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="s1">&#39;padding: 6px;&#39;</span><span class="p">}</span>
+<span class="n">table_caption</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;caption&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="s1">&#39;font-size: 14px; font-style: italic; caption-side: bottom; text-align: left; margin-top: 10px&#39;</span><span class="p">}</span>
+<span class="n">table_large_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;selector&#39;</span><span class="p">:</span> <span class="s1">&#39;tr&#39;</span><span class="p">,</span> <span class="s1">&#39;props&#39;</span><span class="p">:</span> <span class="s1">&#39;font-size: 14px;&#39;</span><span class="p">}</span>
+
+
+<span class="n">table_css_styles</span> <span class="o">=</span> <span class="p">[</span><span class="n">even_rows</span><span class="p">,</span> <span class="n">odd_rows</span><span class="p">,</span> <span class="n">table_font</span><span class="p">,</span> <span class="n">header_row</span><span class="p">,</span> <span class="n">table_caption</span><span class="p">]</span>
+<span class="n">table_large_font</span> <span class="o">=</span> <span class="p">[</span><span class="n">even_rows</span><span class="p">,</span> <span class="n">odd_rows</span><span class="p">,</span> <span class="n">table_large_data</span><span class="p">,</span> <span class="n">header_row</span><span class="p">,</span> <span class="n">table_caption</span><span class="p">]</span>
+
+<span class="c1"># this picks up the correct display names for the different languages</span>
+<span class="n">display_names_fr</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;loc_date&#39;</span><span class="p">:</span> <span class="s1">&#39;échantillons&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;municipalités&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;quantity&#39;</span><span class="p">:</span> <span class="s1">&#39;quantité&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;site&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="s1">&#39;mètres&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="s1">&#39;m²&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;hours&#39;</span><span class="p">:</span> <span class="s1">&#39;heures&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="s1">&#39;echantillons&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="s1">&#39;moyenne&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="s1">&#39;écart-type&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="les-variables-aleatoires">
+<h1><span class="section-number">2. </span>Les variables aléatoires<a class="headerlink" href="#les-variables-aleatoires" title="Permalink to this heading">#</a></h1>
+<p>Il s’agit de l’ensemble de données de base que vous pouvez obtenir une fois que vous avez supprimé les colonnes indésirables et appliqué un regroupement catégoriel. Ici, nous utilisons les groupes limités par la géographie, le temps, l’objet et l’ampleur.</p>
+<div class="section" id="le-contexte-de-l-observation">
+<h2><span class="section-number">2.1. </span>Le contexte de l’observation<a class="headerlink" href="#le-contexte-de-l-observation" title="Permalink to this heading">#</a></h2>
+<p>Une fois les données collectées et agrégées, d’autres informations sont nécessaires pour les placer dans leur contexte par rapport aux autres observations.</p>
+<p>Dans ce modèle, les étiquettes sont largement utilisées. Les objets, les lieux et les attributs des objets et des lieux ont tous des étiquettes. Les étiquettes relatives à l’utilisation des sols correspondent au rapport entre l’attribut et l’espace disponible.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><em>À l’origine, cette méthode était destinée à la surveillance des déchets sur le littoral. L’application de cette méthode aux rivières et aux sentiers de montagne fait l’objet de la présente discussion.</em></p>
+<p>Avoir un consensus sur les descriptions d’objets et être discipliné dans les données enregistrées : c’est la meilleure façon de capturer les informations de l’observateur.</p>
+<ul class="simple">
+<li><p>Une fois le consensus atteint, les ingénieurs peuvent se mettre au travail.</p></li>
+<li><p>Il est plus facile de chercher quelque chose si vous savez ce que vous cherchez ou si vous savez ce qui est important.</p></li>
+</ul>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lakes</span>
+<span class="n">wt_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/u_wt_data.csv&quot;</span><span class="p">)</span>
+<span class="n">wt_data</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">wt_data</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># start variables</span>
+<span class="c1"># this is the observations from the begining of monitoring</span>
+<span class="c1"># to the end of the federal report from 2021. </span>
+<span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;2015-11-15&quot;</span><span class="p">,</span> <span class="s2">&quot;2021-5-31&quot;</span>
+<span class="n">lake</span> <span class="o">=</span> <span class="s1">&#39;lac-leman&#39;</span>
+<span class="n">catchment</span> <span class="o">=</span> <span class="s1">&#39;rhone&#39;</span>
+<span class="n">some_quants</span> <span class="o">=</span> <span class="p">[</span><span class="mf">.03</span><span class="p">,</span> <span class="mf">.25</span><span class="p">,</span> <span class="mf">.48</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mf">.52</span><span class="p">,</span> <span class="mf">.75</span><span class="p">,</span> <span class="mf">.97</span><span class="p">]</span>
+
+<span class="n">d_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">wt_data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wt_data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">)</span>
+<span class="n">wt_data</span> <span class="o">=</span> <span class="n">wt_data</span><span class="p">[</span><span class="n">d_mask</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">wt_data</span> <span class="o">=</span> <span class="n">wt_data</span><span class="p">[</span><span class="n">wt_data</span><span class="o">.</span><span class="n">water_name_slug</span> <span class="o">==</span> <span class="n">lake</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">wt_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;pcs_m&quot;</span><span class="p">:</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># the start and end dates are a sample period. There is</span>
+<span class="c1"># data after the end date. It is called testing</span>
+<span class="n">wt_data</span><span class="p">[</span><span class="s2">&quot;Project&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;training&quot;</span>
+
+<span class="n">survey_data_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span>  <span class="s2">&quot;water_name_slug&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span> <span class="p">,</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;pcs/m&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">]</span>
+<span class="n">groupby_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;water_name_slug&quot;</span><span class="p">,</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;doy&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">]</span>
+<span class="n">operators</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pcs/m&quot;</span><span class="p">:</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;quantity&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">}</span>
+
+<span class="n">wt_data</span> <span class="o">=</span> <span class="n">wt_data</span><span class="p">[</span><span class="n">survey_data_columns</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">groupby_columns</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">operators</span><span class="p">)</span>
+
+<span class="c1"># saint sulpice after may 31 2021</span>
+<span class="n">sup</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/sup_after.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># collected by ASL 2022</span>
+<span class="n">nxc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/u_pstk.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># these are locations that do not have land use data</span>
+<span class="n">not_these</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;amphion&#39;</span><span class="p">,</span> <span class="s1">&#39;anthy&#39;</span><span class="p">,</span> <span class="s1">&#39;excenevex&#39;</span><span class="p">,</span> <span class="s1">&#39;lugrin&#39;</span><span class="p">,</span> <span class="s1">&#39;meillerie&#39;</span><span class="p">,</span> <span class="s1">&#39;saint-disdille&#39;</span><span class="p">,</span> <span class="s1">&#39;tougues&#39;</span><span class="p">]</span>
+
+<span class="n">nxc</span> <span class="o">=</span> <span class="n">nxc</span><span class="p">[</span><span class="o">~</span><span class="n">nxc</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">not_these</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">not_in_here</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;vidy-pk&quot;</span><span class="p">,</span> <span class="s2">&quot;versoix-pk&quot;</span><span class="p">,</span> <span class="s2">&quot;tolochenaz-pk&quot;</span><span class="p">,</span> <span class="s2">&quot;preverenges-pk&quot;</span><span class="p">]</span>
+<span class="n">in_here</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]:</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">not_in_here</span><span class="p">}</span>
+<span class="n">nxc_g</span> <span class="o">=</span> <span class="n">nxc</span><span class="p">[</span><span class="n">nxc</span><span class="o">.</span><span class="n">slug</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">in_here</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">nxc_g</span><span class="p">[</span><span class="s2">&quot;loc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nxc_g</span><span class="o">.</span><span class="n">slug</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">in_here</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+
+<span class="n">nxc_gi</span> <span class="o">=</span> <span class="n">nxc</span><span class="p">[</span><span class="o">~</span><span class="n">nxc</span><span class="o">.</span><span class="n">slug</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">in_here</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">nxc_gi</span><span class="p">[</span><span class="s2">&quot;loc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nxc_gi</span><span class="o">.</span><span class="n">slug</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nxc_gi</span><span class="o">.</span><span class="n">slug</span> <span class="o">!=</span> <span class="s2">&quot;versoix&quot;</span><span class="p">,</span> <span class="s2">&quot;versoix-p&quot;</span><span class="p">)</span>
+<span class="n">gtd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">nxc_gi</span><span class="p">,</span> <span class="n">nxc_g</span><span class="p">])</span>
+<span class="n">gtd</span> <span class="o">=</span> <span class="n">gtd</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gtd</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;loc&quot;</span><span class="p">:</span><span class="s2">&quot;location&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gtd</span><span class="p">[</span><span class="s2">&quot;water_name_slug&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;lac-leman&quot;</span>
+
+
+<span class="c1"># all the data from le lac</span>
+<span class="c1"># separated into to two groups: training and testing</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wt_data</span><span class="p">,</span> <span class="n">sup</span><span class="p">[</span><span class="n">survey_data_columns</span><span class="p">],</span> <span class="n">gtd</span><span class="p">[</span><span class="n">survey_data_columns</span><span class="p">]])</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">combined</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;loc_date&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">])</span>
+<span class="n">combined</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">combined</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+<span class="n">combined</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span><span class="n">combined</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+
+
+<span class="c1"># codes and beaches</span>
+<span class="n">dfCodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/codes.csv&quot;</span><span class="p">)</span>
+<span class="n">dfBeaches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;resources/beaches.csv&quot;</span><span class="p">)</span>
+<span class="n">dfBeaches</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;slug&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">dfBeaches</span> <span class="o">=</span> <span class="n">dfBeaches</span><span class="p">[</span><span class="n">dfBeaches</span><span class="o">.</span><span class="n">water_name_slug</span> <span class="o">==</span> <span class="n">lake</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="section" id="resultats-d-inventaire">
+<h3><span class="section-number">2.1.1. </span>Résultats d’inventaire<a class="headerlink" href="#resultats-d-inventaire" title="Permalink to this heading">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>C’est ce qui est compté. La manière dont ces objets sont classés est un élément essentiel des données. C’est aussi la façon la plus simple de faire mesurer une valeur. Il est plus facile et plus rapide de le faire au moment de l’enquête.</p>
+</div>
+<div class="section" id="debut-nov-2015-fin-decembre-2022">
+<h4><span class="section-number">2.1.1.1. </span>Début: nov 2015, fin: décembre 2022<a class="headerlink" href="#debut-nov-2015-fin-decembre-2022" title="Permalink to this heading">#</a></h4>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_84c25 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_84c25 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_84c25 tr {
+  font-size: 14px;
+}
+#T_84c25 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_84c25 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_84c25">
+  <caption>L'inventaire de base, _jdl = jour de l'année_. Échantillons est l'identifiant de l'inventaire, il connecte les objets au même inventaire. La quantité et les pcs/m sont les variables numériques pour chaque ligne. Le reste des colonnes sont des étiquettes.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_84c25_level0_col0" class="col_heading level0 col0" >échantillons</th>
+      <th id="T_84c25_level0_col1" class="col_heading level0 col1" >site</th>
+      <th id="T_84c25_level0_col2" class="col_heading level0 col2" >water_name_slug</th>
+      <th id="T_84c25_level0_col3" class="col_heading level0 col3" >municipalités</th>
+      <th id="T_84c25_level0_col4" class="col_heading level0 col4" >date</th>
+      <th id="T_84c25_level0_col5" class="col_heading level0 col5" >jdl</th>
+      <th id="T_84c25_level0_col6" class="col_heading level0 col6" >Projet</th>
+      <th id="T_84c25_level0_col7" class="col_heading level0 col7" >code</th>
+      <th id="T_84c25_level0_col8" class="col_heading level0 col8" >pcs/m</th>
+      <th id="T_84c25_level0_col9" class="col_heading level0 col9" >quantité</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_84c25_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_84c25_row0_col0" class="data row0 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_84c25_row0_col1" class="data row0 col1" >anarchy-beach</td>
+      <td id="T_84c25_row0_col2" class="data row0 col2" >lac-leman</td>
+      <td id="T_84c25_row0_col3" class="data row0 col3" >La Tour-de-Peilz</td>
+      <td id="T_84c25_row0_col4" class="data row0 col4" >2018-04-02</td>
+      <td id="T_84c25_row0_col5" class="data row0 col5" >92</td>
+      <td id="T_84c25_row0_col6" class="data row0 col6" >training</td>
+      <td id="T_84c25_row0_col7" class="data row0 col7" >G1</td>
+      <td id="T_84c25_row0_col8" class="data row0 col8" >0.000</td>
+      <td id="T_84c25_row0_col9" class="data row0 col9" >0</td>
+    </tr>
+    <tr>
+      <th id="T_84c25_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_84c25_row1_col0" class="data row1 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_84c25_row1_col1" class="data row1 col1" >anarchy-beach</td>
+      <td id="T_84c25_row1_col2" class="data row1 col2" >lac-leman</td>
+      <td id="T_84c25_row1_col3" class="data row1 col3" >La Tour-de-Peilz</td>
+      <td id="T_84c25_row1_col4" class="data row1 col4" >2018-04-02</td>
+      <td id="T_84c25_row1_col5" class="data row1 col5" >92</td>
+      <td id="T_84c25_row1_col6" class="data row1 col6" >training</td>
+      <td id="T_84c25_row1_col7" class="data row1 col7" >G10</td>
+      <td id="T_84c25_row1_col8" class="data row1 col8" >0.060</td>
+      <td id="T_84c25_row1_col9" class="data row1 col9" >4</td>
+    </tr>
+    <tr>
+      <th id="T_84c25_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_84c25_row2_col0" class="data row2 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_84c25_row2_col1" class="data row2 col1" >anarchy-beach</td>
+      <td id="T_84c25_row2_col2" class="data row2 col2" >lac-leman</td>
+      <td id="T_84c25_row2_col3" class="data row2 col3" >La Tour-de-Peilz</td>
+      <td id="T_84c25_row2_col4" class="data row2 col4" >2018-04-02</td>
+      <td id="T_84c25_row2_col5" class="data row2 col5" >92</td>
+      <td id="T_84c25_row2_col6" class="data row2 col6" >training</td>
+      <td id="T_84c25_row2_col7" class="data row2 col7" >G100</td>
+      <td id="T_84c25_row2_col8" class="data row2 col8" >0.140</td>
+      <td id="T_84c25_row2_col9" class="data row2 col9" >10</td>
+    </tr>
+    <tr>
+      <th id="T_84c25_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_84c25_row3_col0" class="data row3 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_84c25_row3_col1" class="data row3 col1" >anarchy-beach</td>
+      <td id="T_84c25_row3_col2" class="data row3 col2" >lac-leman</td>
+      <td id="T_84c25_row3_col3" class="data row3 col3" >La Tour-de-Peilz</td>
+      <td id="T_84c25_row3_col4" class="data row3 col4" >2018-04-02</td>
+      <td id="T_84c25_row3_col5" class="data row3 col5" >92</td>
+      <td id="T_84c25_row3_col6" class="data row3 col6" >training</td>
+      <td id="T_84c25_row3_col7" class="data row3 col7" >G101</td>
+      <td id="T_84c25_row3_col8" class="data row3 col8" >0.000</td>
+      <td id="T_84c25_row3_col9" class="data row3 col9" >0</td>
+    </tr>
+    <tr>
+      <th id="T_84c25_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_84c25_row4_col0" class="data row4 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_84c25_row4_col1" class="data row4 col1" >anarchy-beach</td>
+      <td id="T_84c25_row4_col2" class="data row4 col2" >lac-leman</td>
+      <td id="T_84c25_row4_col3" class="data row4 col3" >La Tour-de-Peilz</td>
+      <td id="T_84c25_row4_col4" class="data row4 col4" >2018-04-02</td>
+      <td id="T_84c25_row4_col5" class="data row4 col5" >92</td>
+      <td id="T_84c25_row4_col6" class="data row4 col6" >training</td>
+      <td id="T_84c25_row4_col7" class="data row4 col7" >G102</td>
+      <td id="T_84c25_row4_col8" class="data row4 col8" >0.000</td>
+      <td id="T_84c25_row4_col9" class="data row4 col9" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="details-du-site-d-inventaire">
+<h3><span class="section-number">2.1.2. </span>Détails du site d’inventaire<a class="headerlink" href="#details-du-site-d-inventaire" title="Permalink to this heading">#</a></h3>
+<p>Celui-ci contient les détails de localisation tels que le GPS, le bassin fluvial de la ville, etc. Une grande partie a déjà été ajoutée aux données pour le travail. Cependant, les noms propres peuvent être extraits et des attributs peuvent être ajoutés à cet ensemble, puis appliqués.</p>
+<p>La localisation GPS constitue le centre d’un hexagone de 3 000 mètres. La configuration de l’utilisation du sol pour chaque emplacement est configurée à partir de ce point.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les données utilisées pour identifier un emplacement sont définies sur la manière dont les informations vont être utilisées. C’est également un moyen simple d’améliorer le flux de données une fois les exigences comprises.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_5166d tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_5166d tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_5166d tr {
+  font-size: 14px;
+}
+#T_5166d th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_5166d caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_5166d">
+  <caption>Détails de localisation des plages du Léman. Des attributs peuvent être ajoutés à cet ensemble de données et transmis ultérieurement si nécessaire. Pour l'instant, les caractéristiques topographiques sont stockées sur un autre ensemble de données partageant le même index.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_5166d_level0_col0" class="col_heading level0 col0" >site</th>
+      <th id="T_5166d_level0_col1" class="col_heading level0 col1" >latitude</th>
+      <th id="T_5166d_level0_col2" class="col_heading level0 col2" >longitude</th>
+      <th id="T_5166d_level0_col3" class="col_heading level0 col3" >zone d'interêt</th>
+      <th id="T_5166d_level0_col4" class="col_heading level0 col4" >municipalités</th>
+      <th id="T_5166d_level0_col5" class="col_heading level0 col5" >bassin versant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_5166d_level0_row0" class="row_heading level0 row0" >anarchy-beach</th>
+      <td id="T_5166d_row0_col0" class="data row0 col0" >Anarchy Beach</td>
+      <td id="T_5166d_row0_col1" class="data row0 col1" >46.447</td>
+      <td id="T_5166d_row0_col2" class="data row0 col2" >6.860</td>
+      <td id="T_5166d_row0_col3" class="data row0 col3" >Lac Léman</td>
+      <td id="T_5166d_row0_col4" class="data row0 col4" >La Tour-de-Peilz</td>
+      <td id="T_5166d_row0_col5" class="data row0 col5" >rhone</td>
+    </tr>
+    <tr>
+      <th id="T_5166d_level0_row1" class="row_heading level0 row1" >arabie</th>
+      <td id="T_5166d_row1_col0" class="data row1 col0" >Arabie</td>
+      <td id="T_5166d_row1_col1" class="data row1 col1" >46.462</td>
+      <td id="T_5166d_row1_col2" class="data row1 col2" >6.835</td>
+      <td id="T_5166d_row1_col3" class="data row1 col3" >Lac Léman</td>
+      <td id="T_5166d_row1_col4" class="data row1 col4" >Vevey</td>
+      <td id="T_5166d_row1_col5" class="data row1 col5" >rhone</td>
+    </tr>
+    <tr>
+      <th id="T_5166d_level0_row2" class="row_heading level0 row2" >baby-plage-geneva</th>
+      <td id="T_5166d_row2_col0" class="data row2 col0" >Baby Plage Geneva</td>
+      <td id="T_5166d_row2_col1" class="data row2 col1" >46.209</td>
+      <td id="T_5166d_row2_col2" class="data row2 col2" >6.163</td>
+      <td id="T_5166d_row2_col3" class="data row2 col3" >Lac Léman</td>
+      <td id="T_5166d_row2_col4" class="data row2 col4" >Genève</td>
+      <td id="T_5166d_row2_col5" class="data row2 col5" >rhone</td>
+    </tr>
+    <tr>
+      <th id="T_5166d_level0_row3" class="row_heading level0 row3" >baby-plage-ii-geneve</th>
+      <td id="T_5166d_row3_col0" class="data row3 col0" >Baby-Plage II Genève</td>
+      <td id="T_5166d_row3_col1" class="data row3 col1" >46.209</td>
+      <td id="T_5166d_row3_col2" class="data row3 col2" >6.164</td>
+      <td id="T_5166d_row3_col3" class="data row3 col3" >Lac Léman</td>
+      <td id="T_5166d_row3_col4" class="data row3 col4" >Genève</td>
+      <td id="T_5166d_row3_col5" class="data row3 col5" >rhone</td>
+    </tr>
+    <tr>
+      <th id="T_5166d_level0_row4" class="row_heading level0 row4" >bain-des-dames</th>
+      <td id="T_5166d_row4_col0" class="data row4 col0" >Bain des Dames</td>
+      <td id="T_5166d_row4_col1" class="data row4 col1" >46.451</td>
+      <td id="T_5166d_row4_col2" class="data row4 col2" >6.858</td>
+      <td id="T_5166d_row4_col3" class="data row4 col3" >Lac Léman</td>
+      <td id="T_5166d_row4_col4" class="data row4 col4" >La Tour-de-Peilz</td>
+      <td id="T_5166d_row4_col5" class="data row4 col5" >rhone</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="categories-d-objets">
+<h3><span class="section-number">2.1.3. </span>Catégories d’objets<a class="headerlink" href="#categories-d-objets" title="Permalink to this heading">#</a></h3>
+<p>Les catégories d’objets correspondent à la manière dont la personne transmet l’observation à l’appareil. La description et le nom du groupe permettent aux administrations régionales d’obtenir davantage d’informations à partir des données.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En créant des groupes d’objets qui représentent des cas d’utilisation, il peut être plus facile pour les acteurs régionaux d’identifier les priorités. Il s’agit peut-être de la meilleure voie de discussion entre les acteurs régionaux. Si les catégories d’objets ou les groupes correspondent à des priorités communes, les communications peuvent être simplifiées.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_1e643 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_1e643 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_1e643 tr {
+  font-size: 14px;
+}
+#T_1e643 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_1e643 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_1e643">
+  <caption>Tableau d'informations sur les objets. Nous pouvons ajouter des codes spécifiques à une région. Par exemple nous ajoutons le code G708 pour les bâtons de ski. Ils ne sont pas communs au bord des lacs mais on les trouve en montagne. Un autre exemple est celui des contenants d’appâts aux phéromones. Ils sont utilisés dans les vignobles et on les retrouve là où se concentrent les vignobles.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_1e643_level0_col0" class="col_heading level0 col0" >code</th>
+      <th id="T_1e643_level0_col1" class="col_heading level0 col1" >matériel</th>
+      <th id="T_1e643_level0_col2" class="col_heading level0 col2" >description</th>
+      <th id="T_1e643_level0_col3" class="col_heading level0 col3" >code de base</th>
+      <th id="T_1e643_level0_col4" class="col_heading level0 col4" >groupe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_1e643_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_1e643_row0_col0" class="data row0 col0" >G708</td>
+      <td id="T_1e643_row0_col1" class="data row0 col1" >Metal</td>
+      <td id="T_1e643_row0_col2" class="data row0 col2" >Batons de ski</td>
+      <td id="T_1e643_row0_col3" class="data row0 col3" >G199</td>
+      <td id="T_1e643_row0_col4" class="data row0 col4" >recreation</td>
+    </tr>
+    <tr>
+      <th id="T_1e643_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_1e643_row1_col0" class="data row1 col0" >G212</td>
+      <td id="T_1e643_row1_col1" class="data row1 col1" >Chemicals</td>
+      <td id="T_1e643_row1_col2" class="data row1 col2" >Oil nodules or coal fragments -- not from a BBQ</td>
+      <td id="T_1e643_row1_col3" class="data row1 col3" >Parent code</td>
+      <td id="T_1e643_row1_col4" class="data row1 col4" >unclassified</td>
+    </tr>
+    <tr>
+      <th id="T_1e643_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_1e643_row2_col0" class="data row2 col0" >G213</td>
+      <td id="T_1e643_row2_col1" class="data row2 col1" >Chemicals</td>
+      <td id="T_1e643_row2_col2" class="data row2 col2" >Paraffin wax</td>
+      <td id="T_1e643_row2_col3" class="data row2 col3" >Parent code</td>
+      <td id="T_1e643_row2_col4" class="data row2 col4" >recreation</td>
+    </tr>
+    <tr>
+      <th id="T_1e643_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_1e643_row3_col0" class="data row3 col0" >G214</td>
+      <td id="T_1e643_row3_col1" class="data row3 col1" >Chemicals</td>
+      <td id="T_1e643_row3_col2" class="data row3 col2" >Oil/tar</td>
+      <td id="T_1e643_row3_col3" class="data row3 col3" >Parent code</td>
+      <td id="T_1e643_row3_col4" class="data row3 col4" >infrastructure</td>
+    </tr>
+    <tr>
+      <th id="T_1e643_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_1e643_row4_col0" class="data row4 col0" >G135</td>
+      <td id="T_1e643_row4_col1" class="data row4 col1" >Cloth</td>
+      <td id="T_1e643_row4_col2" class="data row4 col2" >Clothes, footware, headware, gloves</td>
+      <td id="T_1e643_row4_col3" class="data row4 col3" >Parent code</td>
+      <td id="T_1e643_row4_col4" class="data row4 col4" >personal items</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="utilisation-du-sol">
+<h3><span class="section-number">2.1.4. </span>Utilisation du sol<a class="headerlink" href="#utilisation-du-sol" title="Permalink to this heading">#</a></h3>
+<p>Il s’agit de l’ampleur des caractéristiques topographiques trouvées dans un rayon de 1 500 du lieu d’enquête. La source est la collection de cartes swissTLMRegio. Une superposition hexagonale est appliquée aux couches de couverture terrestre et d’utilisation des terres. Ensuite, le contenu de chaque hex est enregistré en mètres² ou en mètres linéaires.</p>
+<p>Ce processus a montré des corrélations entre l’ampleur des résultats de l’enquête pour certains objets et l’ampleur de l’élément topographique. Ce processus a été expliqué dans <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/probability.html">Near of Far</a> et  <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/land_use_correlation.html">Land use profile</a>.</p>
+<p>L’ampleur de l’élément topographique et sa valeur mise à l’échelle sont disponibles. Les données ont été séparées en groupes percentiles. Il existe 21 groupes, un groupe étant destiné au cas où la caractéristique d’utilisation des terres n’est pas présente, puis un groupe pour chaque cinquième percentile.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pour cette phase initiale, seules les couches cartographiques de base ont été utilisées. Pour les partenaires intéressés, l’une des couches cartographiques de<a class="reference external" href="https://www.swisstopo.admin.ch/de/geodata/landscape/tlmregio.html">TLMRegio</a> fonctionnera sur ces données. Cela permet aux équipes indépendantes d’utiliser plus facilement les résultats pour des besoins spécifiques.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_df660 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_df660 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_df660 tr {
+  font-size: 14px;
+}
+#T_df660 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_df660 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_df660">
+  <caption>Le profil d'occupation du sol de la tiger-duck-beach à Saint Sulpice. Rappelez-vous que la grandeur des rues est en mètres, tout le reste est en mètres carrés. La quantité de terre sèche est donnée en mètres², normalisée étant le résultat de la magnitude/terre sèche. Rang est le classement de cette caractéristique d'utilisation des sols (0 - 20).</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_df660_level0_col0" class="col_heading level0 col0" >magnitude</th>
+      <th id="T_df660_level0_col1" class="col_heading level0 col1" >terre sèche</th>
+      <th id="T_df660_level0_col2" class="col_heading level0 col2" >normalisée</th>
+      <th id="T_df660_level0_col3" class="col_heading level0 col3" >rang</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_df660_level0_row0" class="row_heading level0 row0" >bâtiments</th>
+      <td id="T_df660_row0_col0" class="data row0 col0" >3,351,943</td>
+      <td id="T_df660_row0_col1" class="data row0 col1" >3,689,451</td>
+      <td id="T_df660_row0_col2" class="data row0 col2" >0.909</td>
+      <td id="T_df660_row0_col3" class="data row0 col3" >19</td>
+    </tr>
+    <tr>
+      <th id="T_df660_level0_row1" class="row_heading level0 row1" >forêt</th>
+      <td id="T_df660_row1_col0" class="data row1 col0" >157,389</td>
+      <td id="T_df660_row1_col1" class="data row1 col1" >3,689,451</td>
+      <td id="T_df660_row1_col2" class="data row1 col2" >0.043</td>
+      <td id="T_df660_row1_col3" class="data row1 col3" >1</td>
+    </tr>
+    <tr>
+      <th id="T_df660_level0_row2" class="row_heading level0 row2" >non définie</th>
+      <td id="T_df660_row2_col0" class="data row2 col0" >180,119</td>
+      <td id="T_df660_row2_col1" class="data row2 col1" >3,689,451</td>
+      <td id="T_df660_row2_col2" class="data row2 col2" >0.049</td>
+      <td id="T_df660_row2_col3" class="data row2 col3" >1</td>
+    </tr>
+    <tr>
+      <th id="T_df660_level0_row3" class="row_heading level0 row3" >infrastructure</th>
+      <td id="T_df660_row3_col0" class="data row3 col0" >1,391,466</td>
+      <td id="T_df660_row3_col1" class="data row3 col1" >3,689,451</td>
+      <td id="T_df660_row3_col2" class="data row3 col2" >0.377</td>
+      <td id="T_df660_row3_col3" class="data row3 col3" >8</td>
+    </tr>
+    <tr>
+      <th id="T_df660_level0_row4" class="row_heading level0 row4" >récréation</th>
+      <td id="T_df660_row4_col0" class="data row4 col0" >249,970</td>
+      <td id="T_df660_row4_col1" class="data row4 col1" >3,689,451</td>
+      <td id="T_df660_row4_col2" class="data row4 col2" >0.068</td>
+      <td id="T_df660_row4_col3" class="data row4 col3" >2</td>
+    </tr>
+    <tr>
+      <th id="T_df660_level0_row5" class="row_heading level0 row5" >rues</th>
+      <td id="T_df660_row5_col0" class="data row5 col0" >95,764</td>
+      <td id="T_df660_row5_col1" class="data row5 col1" >0</td>
+      <td id="T_df660_row5_col2" class="data row5 col2" >0.485</td>
+      <td id="T_df660_row5_col3" class="data row5 col3" >10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+</div>
+<div class="section" id="cantonal">
+<h3><span class="section-number">2.1.5. </span>Cantonal<a class="headerlink" href="#cantonal" title="Permalink to this heading">#</a></h3>
+<p>La situation géographique ciblée. Cependant, les échantillons du Rhône et du Léman partagent des origines communes. Pour le Léman les échantillons du Valais représentent 5% de tous les échantillons et 12% en quantité.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cela devrait affecter les décisions d’échantillonnage au niveau régional. Pour le Valais le bilan n’est pas correct compte tenu des kilomètres du Rhône.</p>
+<p>Il existe cependant un consensus entre 2021 et 2022 en référence aux valeurs élevées à l’embouchure du Rhône.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_fab8f tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_fab8f tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_fab8f tr {
+  font-size: 14px;
+}
+#T_fab8f th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_fab8f caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_fab8f">
+  <caption>Nous comptons 98 921 objets pour la période indiquée. De 25 villes. Il y avait 319 échantillons provenant de 56 sites.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_fab8f_level0_col0" class="col_heading level0 col0" >quantité</th>
+      <th id="T_fab8f_level0_col1" class="col_heading level0 col1" >municipalités</th>
+      <th id="T_fab8f_level0_col2" class="col_heading level0 col2" >échantillons</th>
+      <th id="T_fab8f_level0_col3" class="col_heading level0 col3" >site</th>
+      <th id="T_fab8f_level0_col4" class="col_heading level0 col4" >% de totale</th>
+      <th id="T_fab8f_level0_col5" class="col_heading level0 col5" >% des échantillons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_fab8f_level0_row0" class="row_heading level0 row0" >Genève</th>
+      <td id="T_fab8f_row0_col0" class="data row0 col0" >13,018</td>
+      <td id="T_fab8f_row0_col1" class="data row0 col1" >4</td>
+      <td id="T_fab8f_row0_col2" class="data row0 col2" >50</td>
+      <td id="T_fab8f_row0_col3" class="data row0 col3" >11</td>
+      <td id="T_fab8f_row0_col4" class="data row0 col4" >0.132</td>
+      <td id="T_fab8f_row0_col5" class="data row0 col5" >0.157</td>
+    </tr>
+    <tr>
+      <th id="T_fab8f_level0_row1" class="row_heading level0 row1" >Valais</th>
+      <td id="T_fab8f_row1_col0" class="data row1 col0" >12,193</td>
+      <td id="T_fab8f_row1_col1" class="data row1 col1" >2</td>
+      <td id="T_fab8f_row1_col2" class="data row1 col2" >17</td>
+      <td id="T_fab8f_row1_col3" class="data row1 col3" >2</td>
+      <td id="T_fab8f_row1_col4" class="data row1 col4" >0.123</td>
+      <td id="T_fab8f_row1_col5" class="data row1 col5" >0.053</td>
+    </tr>
+    <tr>
+      <th id="T_fab8f_level0_row2" class="row_heading level0 row2" >Vaud</th>
+      <td id="T_fab8f_row2_col0" class="data row2 col0" >73,710</td>
+      <td id="T_fab8f_row2_col1" class="data row2 col1" >19</td>
+      <td id="T_fab8f_row2_col2" class="data row2 col2" >252</td>
+      <td id="T_fab8f_row2_col3" class="data row2 col3" >43</td>
+      <td id="T_fab8f_row2_col4" class="data row2 col4" >0.745</td>
+      <td id="T_fab8f_row2_col5" class="data row2 col5" >0.79</td>
+    </tr>
+    <tr>
+      <th id="T_fab8f_level0_row3" class="row_heading level0 row3" >Total</th>
+      <td id="T_fab8f_row3_col0" class="data row3 col0" >98,921</td>
+      <td id="T_fab8f_row3_col1" class="data row3 col1" >25</td>
+      <td id="T_fab8f_row3_col2" class="data row3 col2" >319</td>
+      <td id="T_fab8f_row3_col3" class="data row3 col3" >56</td>
+      <td id="T_fab8f_row3_col4" class="data row3 col4" >1.0</td>
+      <td id="T_fab8f_row3_col5" class="data row3 col5" >1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="regional">
+<h3><span class="section-number">2.1.6. </span>Régional<a class="headerlink" href="#regional" title="Permalink to this heading">#</a></h3>
+<p>Ces étiquettes sont une façon de diviser le lac. Le transport et le dépôt d’objets dans ces zones peuvent avoir une importance régionale. Si tel est le cas, le Valais est un contributeur important.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_01df8 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_01df8 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_01df8 tr {
+  font-size: 14px;
+}
+#T_01df8 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_01df8 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_01df8">
+  <caption>Les noms régionaux représentent différentes caractéristiques hydrologiques ainsi que des différences géographiques.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_01df8_level0_col0" class="col_heading level0 col0" >quantité</th>
+      <th id="T_01df8_level0_col1" class="col_heading level0 col1" >municipalités</th>
+      <th id="T_01df8_level0_col2" class="col_heading level0 col2" >échantillons</th>
+      <th id="T_01df8_level0_col3" class="col_heading level0 col3" >site</th>
+      <th id="T_01df8_level0_col4" class="col_heading level0 col4" >% de totale</th>
+      <th id="T_01df8_level0_col5" class="col_heading level0 col5" >% des échantillons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_01df8_level0_row0" class="row_heading level0 row0" >Grand lac</th>
+      <td id="T_01df8_row0_col0" class="data row0 col0" >26,318</td>
+      <td id="T_01df8_row0_col1" class="data row0 col1" >11</td>
+      <td id="T_01df8_row0_col2" class="data row0 col2" >87</td>
+      <td id="T_01df8_row0_col3" class="data row0 col3" >22</td>
+      <td id="T_01df8_row0_col4" class="data row0 col4" >0.266</td>
+      <td id="T_01df8_row0_col5" class="data row0 col5" >0.273</td>
+    </tr>
+    <tr>
+      <th id="T_01df8_level0_row1" class="row_heading level0 row1" >Haut lac</th>
+      <td id="T_01df8_row1_col0" class="data row1 col0" >58,080</td>
+      <td id="T_01df8_row1_col1" class="data row1 col1" >9</td>
+      <td id="T_01df8_row1_col2" class="data row1 col2" >157</td>
+      <td id="T_01df8_row1_col3" class="data row1 col3" >20</td>
+      <td id="T_01df8_row1_col4" class="data row1 col4" >0.587</td>
+      <td id="T_01df8_row1_col5" class="data row1 col5" >0.492</td>
+    </tr>
+    <tr>
+      <th id="T_01df8_level0_row2" class="row_heading level0 row2" >Petit lac</th>
+      <td id="T_01df8_row2_col0" class="data row2 col0" >14,523</td>
+      <td id="T_01df8_row2_col1" class="data row2 col1" >6</td>
+      <td id="T_01df8_row2_col2" class="data row2 col2" >75</td>
+      <td id="T_01df8_row2_col3" class="data row2 col3" >14</td>
+      <td id="T_01df8_row2_col4" class="data row2 col4" >0.147</td>
+      <td id="T_01df8_row2_col5" class="data row2 col5" >0.235</td>
+    </tr>
+    <tr>
+      <th id="T_01df8_level0_row3" class="row_heading level0 row3" >Total</th>
+      <td id="T_01df8_row3_col0" class="data row3 col0" >98,921</td>
+      <td id="T_01df8_row3_col1" class="data row3 col1" >26</td>
+      <td id="T_01df8_row3_col2" class="data row3 col2" >319</td>
+      <td id="T_01df8_row3_col3" class="data row3 col3" >56</td>
+      <td id="T_01df8_row3_col4" class="data row3 col4" >1.0</td>
+      <td id="T_01df8_row3_col5" class="data row3 col5" >1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="municipal">
+<h3><span class="section-number">2.1.7. </span>Municipal<a class="headerlink" href="#municipal" title="Permalink to this heading">#</a></h3>
+<p>L’unité de base. Les communes non inscrites sur la liste n’ont pas été échantillonnées.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_660bd tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_660bd tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_660bd tr {
+  font-size: 14px;
+}
+#T_660bd th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_660bd caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_660bd">
+  <caption>Montreux et Vevey représentent 31% des échantillons depuis 2015.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_660bd_level0_col0" class="col_heading level0 col0" >quantité</th>
+      <th id="T_660bd_level0_col1" class="col_heading level0 col1" >échantillons</th>
+      <th id="T_660bd_level0_col2" class="col_heading level0 col2" >site</th>
+      <th id="T_660bd_level0_col3" class="col_heading level0 col3" >% de totale</th>
+      <th id="T_660bd_level0_col4" class="col_heading level0 col4" >% des échantillons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_660bd_level0_row0" class="row_heading level0 row0" >Allaman</th>
+      <td id="T_660bd_row0_col0" class="data row0 col0" >631</td>
+      <td id="T_660bd_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_660bd_row0_col2" class="data row0 col2" >1</td>
+      <td id="T_660bd_row0_col3" class="data row0 col3" >0.006</td>
+      <td id="T_660bd_row0_col4" class="data row0 col4" >0.009</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row1" class="row_heading level0 row1" >Aubonne</th>
+      <td id="T_660bd_row1_col0" class="data row1 col0" >193</td>
+      <td id="T_660bd_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_660bd_row1_col2" class="data row1 col2" >1</td>
+      <td id="T_660bd_row1_col3" class="data row1 col3" >0.002</td>
+      <td id="T_660bd_row1_col4" class="data row1 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row2" class="row_heading level0 row2" >Bourg-en-Lavaux</th>
+      <td id="T_660bd_row2_col0" class="data row2 col0" >121</td>
+      <td id="T_660bd_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_660bd_row2_col2" class="data row2 col2" >1</td>
+      <td id="T_660bd_row2_col3" class="data row2 col3" >0.001</td>
+      <td id="T_660bd_row2_col4" class="data row2 col4" >0.006</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row3" class="row_heading level0 row3" >Bouveret</th>
+      <td id="T_660bd_row3_col0" class="data row3 col0" >3,286</td>
+      <td id="T_660bd_row3_col1" class="data row3 col1" >4</td>
+      <td id="T_660bd_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_660bd_row3_col3" class="data row3 col3" >0.033</td>
+      <td id="T_660bd_row3_col4" class="data row3 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row4" class="row_heading level0 row4" >Clarens</th>
+      <td id="T_660bd_row4_col0" class="data row4 col0" >1,128</td>
+      <td id="T_660bd_row4_col1" class="data row4 col1" >4</td>
+      <td id="T_660bd_row4_col2" class="data row4 col2" >1</td>
+      <td id="T_660bd_row4_col3" class="data row4 col3" >0.011</td>
+      <td id="T_660bd_row4_col4" class="data row4 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row5" class="row_heading level0 row5" >Crans</th>
+      <td id="T_660bd_row5_col0" class="data row5 col0" >21</td>
+      <td id="T_660bd_row5_col1" class="data row5 col1" >3</td>
+      <td id="T_660bd_row5_col2" class="data row5 col2" >1</td>
+      <td id="T_660bd_row5_col3" class="data row5 col3" >0.0</td>
+      <td id="T_660bd_row5_col4" class="data row5 col4" >0.009</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row6" class="row_heading level0 row6" >Cully</th>
+      <td id="T_660bd_row6_col0" class="data row6 col0" >48</td>
+      <td id="T_660bd_row6_col1" class="data row6 col1" >4</td>
+      <td id="T_660bd_row6_col2" class="data row6 col2" >1</td>
+      <td id="T_660bd_row6_col3" class="data row6 col3" >0.0</td>
+      <td id="T_660bd_row6_col4" class="data row6 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row7" class="row_heading level0 row7" >Genève</th>
+      <td id="T_660bd_row7_col0" class="data row7 col0" >8,666</td>
+      <td id="T_660bd_row7_col1" class="data row7 col1" >33</td>
+      <td id="T_660bd_row7_col2" class="data row7 col2" >6</td>
+      <td id="T_660bd_row7_col3" class="data row7 col3" >0.088</td>
+      <td id="T_660bd_row7_col4" class="data row7 col4" >0.103</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row8" class="row_heading level0 row8" >Gland</th>
+      <td id="T_660bd_row8_col0" class="data row8 col0" >1,690</td>
+      <td id="T_660bd_row8_col1" class="data row8 col1" >26</td>
+      <td id="T_660bd_row8_col2" class="data row8 col2" >3</td>
+      <td id="T_660bd_row8_col3" class="data row8 col3" >0.017</td>
+      <td id="T_660bd_row8_col4" class="data row8 col4" >0.082</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row9" class="row_heading level0 row9" >Grangettes</th>
+      <td id="T_660bd_row9_col0" class="data row9 col0" >3,677</td>
+      <td id="T_660bd_row9_col1" class="data row9 col1" >4</td>
+      <td id="T_660bd_row9_col2" class="data row9 col2" >1</td>
+      <td id="T_660bd_row9_col3" class="data row9 col3" >0.037</td>
+      <td id="T_660bd_row9_col4" class="data row9 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row10" class="row_heading level0 row10" >Hermance</th>
+      <td id="T_660bd_row10_col0" class="data row10 col0" >201</td>
+      <td id="T_660bd_row10_col1" class="data row10 col1" >4</td>
+      <td id="T_660bd_row10_col2" class="data row10 col2" >1</td>
+      <td id="T_660bd_row10_col3" class="data row10 col3" >0.002</td>
+      <td id="T_660bd_row10_col4" class="data row10 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row11" class="row_heading level0 row11" >La Tour-de-Peilz</th>
+      <td id="T_660bd_row11_col0" class="data row11 col0" >9,085</td>
+      <td id="T_660bd_row11_col1" class="data row11 col1" >25</td>
+      <td id="T_660bd_row11_col2" class="data row11 col2" >5</td>
+      <td id="T_660bd_row11_col3" class="data row11 col3" >0.092</td>
+      <td id="T_660bd_row11_col4" class="data row11 col4" >0.078</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row12" class="row_heading level0 row12" >Lausanne</th>
+      <td id="T_660bd_row12_col0" class="data row12 col0" >3,822</td>
+      <td id="T_660bd_row12_col1" class="data row12 col1" >20</td>
+      <td id="T_660bd_row12_col2" class="data row12 col2" >3</td>
+      <td id="T_660bd_row12_col3" class="data row12 col3" >0.039</td>
+      <td id="T_660bd_row12_col4" class="data row12 col4" >0.063</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row13" class="row_heading level0 row13" >Lutry</th>
+      <td id="T_660bd_row13_col0" class="data row13 col0" >686</td>
+      <td id="T_660bd_row13_col1" class="data row13 col1" >4</td>
+      <td id="T_660bd_row13_col2" class="data row13 col2" >1</td>
+      <td id="T_660bd_row13_col3" class="data row13 col3" >0.007</td>
+      <td id="T_660bd_row13_col4" class="data row13 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row14" class="row_heading level0 row14" >Montreux</th>
+      <td id="T_660bd_row14_col0" class="data row14 col0" >16,715</td>
+      <td id="T_660bd_row14_col1" class="data row14 col1" >53</td>
+      <td id="T_660bd_row14_col2" class="data row14 col2" >5</td>
+      <td id="T_660bd_row14_col3" class="data row14 col3" >0.169</td>
+      <td id="T_660bd_row14_col4" class="data row14 col4" >0.166</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row15" class="row_heading level0 row15" >Morges</th>
+      <td id="T_660bd_row15_col0" class="data row15 col0" >170</td>
+      <td id="T_660bd_row15_col1" class="data row15 col1" >1</td>
+      <td id="T_660bd_row15_col2" class="data row15 col2" >1</td>
+      <td id="T_660bd_row15_col3" class="data row15 col3" >0.002</td>
+      <td id="T_660bd_row15_col4" class="data row15 col4" >0.003</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row16" class="row_heading level0 row16" >Préverenges</th>
+      <td id="T_660bd_row16_col0" class="data row16 col0" >7,009</td>
+      <td id="T_660bd_row16_col1" class="data row16 col1" >19</td>
+      <td id="T_660bd_row16_col2" class="data row16 col2" >3</td>
+      <td id="T_660bd_row16_col3" class="data row16 col3" >0.071</td>
+      <td id="T_660bd_row16_col4" class="data row16 col4" >0.06</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row17" class="row_heading level0 row17" >Rolle</th>
+      <td id="T_660bd_row17_col0" class="data row17 col0" >1,236</td>
+      <td id="T_660bd_row17_col1" class="data row17 col1" >4</td>
+      <td id="T_660bd_row17_col2" class="data row17 col2" >2</td>
+      <td id="T_660bd_row17_col3" class="data row17 col3" >0.012</td>
+      <td id="T_660bd_row17_col4" class="data row17 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row18" class="row_heading level0 row18" >Saint-Gingolph</th>
+      <td id="T_660bd_row18_col0" class="data row18 col0" >8,907</td>
+      <td id="T_660bd_row18_col1" class="data row18 col1" >13</td>
+      <td id="T_660bd_row18_col2" class="data row18 col2" >1</td>
+      <td id="T_660bd_row18_col3" class="data row18 col3" >0.09</td>
+      <td id="T_660bd_row18_col4" class="data row18 col4" >0.041</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row19" class="row_heading level0 row19" >Saint-Sulpice (VD)</th>
+      <td id="T_660bd_row19_col0" class="data row19 col0" >10,040</td>
+      <td id="T_660bd_row19_col1" class="data row19 col1" >17</td>
+      <td id="T_660bd_row19_col2" class="data row19 col2" >5</td>
+      <td id="T_660bd_row19_col3" class="data row19 col3" >0.101</td>
+      <td id="T_660bd_row19_col4" class="data row19 col4" >0.053</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row20" class="row_heading level0 row20" >Savonière</th>
+      <td id="T_660bd_row20_col0" class="data row20 col0" >592</td>
+      <td id="T_660bd_row20_col1" class="data row20 col1" >4</td>
+      <td id="T_660bd_row20_col2" class="data row20 col2" >1</td>
+      <td id="T_660bd_row20_col3" class="data row20 col3" >0.006</td>
+      <td id="T_660bd_row20_col4" class="data row20 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row21" class="row_heading level0 row21" >Tolochenaz</th>
+      <td id="T_660bd_row21_col0" class="data row21 col0" >754</td>
+      <td id="T_660bd_row21_col1" class="data row21 col1" >7</td>
+      <td id="T_660bd_row21_col2" class="data row21 col2" >3</td>
+      <td id="T_660bd_row21_col3" class="data row21 col3" >0.008</td>
+      <td id="T_660bd_row21_col4" class="data row21 col4" >0.022</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row22" class="row_heading level0 row22" >Versoix</th>
+      <td id="T_660bd_row22_col0" class="data row22 col0" >3,559</td>
+      <td id="T_660bd_row22_col1" class="data row22 col1" >9</td>
+      <td id="T_660bd_row22_col2" class="data row22 col2" >3</td>
+      <td id="T_660bd_row22_col3" class="data row22 col3" >0.036</td>
+      <td id="T_660bd_row22_col4" class="data row22 col4" >0.028</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row23" class="row_heading level0 row23" >Vevey</th>
+      <td id="T_660bd_row23_col0" class="data row23 col0" >15,113</td>
+      <td id="T_660bd_row23_col1" class="data row23 col1" >48</td>
+      <td id="T_660bd_row23_col2" class="data row23 col2" >4</td>
+      <td id="T_660bd_row23_col3" class="data row23 col3" >0.153</td>
+      <td id="T_660bd_row23_col4" class="data row23 col4" >0.15</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row24" class="row_heading level0 row24" >Vidy</th>
+      <td id="T_660bd_row24_col0" class="data row24 col0" >1,571</td>
+      <td id="T_660bd_row24_col1" class="data row24 col1" >4</td>
+      <td id="T_660bd_row24_col2" class="data row24 col2" >1</td>
+      <td id="T_660bd_row24_col3" class="data row24 col3" >0.016</td>
+      <td id="T_660bd_row24_col4" class="data row24 col4" >0.013</td>
+    </tr>
+    <tr>
+      <th id="T_660bd_level0_row25" class="row_heading level0 row25" >Total</th>
+      <td id="T_660bd_row25_col0" class="data row25 col0" >98,921</td>
+      <td id="T_660bd_row25_col1" class="data row25 col1" >319</td>
+      <td id="T_660bd_row25_col2" class="data row25 col2" >56</td>
+      <td id="T_660bd_row25_col3" class="data row25 col3" >1.0</td>
+      <td id="T_660bd_row25_col4" class="data row25 col4" >1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="echantillons-de-bord-des-rivieres">
+<h3><span class="section-number">2.1.8. </span>Échantillons de bord des rivières<a class="headerlink" href="#echantillons-de-bord-des-rivieres" title="Permalink to this heading">#</a></h3>
+<p>Les rivières représentent un environnement d’échantillonnage différent de celui des lacs. La marque des hautes eaux change plus fréquemment et avec plus d’ampleur sur les rivières. Ces changements sont si importants que les relevés effectués sur les berges impliquent souvent de retirer les sacs des arbres.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les acteurs régionaux doivent se mettre d’accord sur les lieux d’échantillonnage optimaux le long de la voie navigable. Cela implique l’apport d’hydrologues et d’autres disciplines qui pourraient indiquer des lieux d’accumulation.</p>
+<p>Il s’agit notamment d’examiner attentivement les limites de la zone d’enquête et la manière de définir ces limites sur le terrain.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_ea969 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_ea969 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_ea969 tr {
+  font-size: 14px;
+}
+#T_ea969 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_ea969 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_ea969">
+  <caption>Les échantillons de rivière ont la même structure que les échantillons de lac. La plupart des échantillons de rivière ont été prélevés en 2018.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_ea969_level0_col0" class="col_heading level0 col0" >site</th>
+      <th id="T_ea969_level0_col1" class="col_heading level0 col1" >municipalités</th>
+      <th id="T_ea969_level0_col2" class="col_heading level0 col2" >date</th>
+      <th id="T_ea969_level0_col3" class="col_heading level0 col3" >jdl</th>
+      <th id="T_ea969_level0_col4" class="col_heading level0 col4" >Projet</th>
+      <th id="T_ea969_level0_col5" class="col_heading level0 col5" >code</th>
+      <th id="T_ea969_level0_col6" class="col_heading level0 col6" >pcs/m</th>
+      <th id="T_ea969_level0_col7" class="col_heading level0 col7" >quantité</th>
+      <th id="T_ea969_level0_col8" class="col_heading level0 col8" >canton</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_ea969_level0_row0" class="row_heading level0 row0" >('aare-limmatspitz', '2020-07-13')</th>
+      <td id="T_ea969_row0_col0" class="data row0 col0" >aare-limmatspitz</td>
+      <td id="T_ea969_row0_col1" class="data row0 col1" >Gebenstorf</td>
+      <td id="T_ea969_row0_col2" class="data row0 col2" >2020-07-13</td>
+      <td id="T_ea969_row0_col3" class="data row0 col3" >195.000</td>
+      <td id="T_ea969_row0_col4" class="data row0 col4" >training</td>
+      <td id="T_ea969_row0_col5" class="data row0 col5" >Gcaps</td>
+      <td id="T_ea969_row0_col6" class="data row0 col6" >0.000</td>
+      <td id="T_ea969_row0_col7" class="data row0 col7" >0.000</td>
+      <td id="T_ea969_row0_col8" class="data row0 col8" >Aargau</td>
+    </tr>
+    <tr>
+      <th id="T_ea969_level0_row1" class="row_heading level0 row1" >('aare-port', '2021-04-23')</th>
+      <td id="T_ea969_row1_col0" class="data row1 col0" >aare-port</td>
+      <td id="T_ea969_row1_col1" class="data row1 col1" >Port</td>
+      <td id="T_ea969_row1_col2" class="data row1 col2" >2021-04-23</td>
+      <td id="T_ea969_row1_col3" class="data row1 col3" >113.000</td>
+      <td id="T_ea969_row1_col4" class="data row1 col4" >training</td>
+      <td id="T_ea969_row1_col5" class="data row1 col5" >Gcaps</td>
+      <td id="T_ea969_row1_col6" class="data row1 col6" >0.050</td>
+      <td id="T_ea969_row1_col7" class="data row1 col7" >2.000</td>
+      <td id="T_ea969_row1_col8" class="data row1 col8" >Bern</td>
+    </tr>
+    <tr>
+      <th id="T_ea969_level0_row2" class="row_heading level0 row2" >('aare-solothurn-lido-strand', '2020-09-05')</th>
+      <td id="T_ea969_row2_col0" class="data row2 col0" >aare-solothurn-lido-strand</td>
+      <td id="T_ea969_row2_col1" class="data row2 col1" >Solothurn</td>
+      <td id="T_ea969_row2_col2" class="data row2 col2" >2020-09-05</td>
+      <td id="T_ea969_row2_col3" class="data row2 col3" >249.000</td>
+      <td id="T_ea969_row2_col4" class="data row2 col4" >training</td>
+      <td id="T_ea969_row2_col5" class="data row2 col5" >Gcaps</td>
+      <td id="T_ea969_row2_col6" class="data row2 col6" >0.000</td>
+      <td id="T_ea969_row2_col7" class="data row2 col7" >0.000</td>
+      <td id="T_ea969_row2_col8" class="data row2 col8" >Solothurn</td>
+    </tr>
+    <tr>
+      <th id="T_ea969_level0_row3" class="row_heading level0 row3" >('aare_bern_caveltin', '2017-04-02')</th>
+      <td id="T_ea969_row3_col0" class="data row3 col0" >aare_bern_caveltin</td>
+      <td id="T_ea969_row3_col1" class="data row3 col1" >Muri bei Bern</td>
+      <td id="T_ea969_row3_col2" class="data row3 col2" >2017-04-02</td>
+      <td id="T_ea969_row3_col3" class="data row3 col3" >92.000</td>
+      <td id="T_ea969_row3_col4" class="data row3 col4" >training</td>
+      <td id="T_ea969_row3_col5" class="data row3 col5" >Gcaps</td>
+      <td id="T_ea969_row3_col6" class="data row3 col6" >0.000</td>
+      <td id="T_ea969_row3_col7" class="data row3 col7" >0.000</td>
+      <td id="T_ea969_row3_col8" class="data row3 col8" >Bern</td>
+    </tr>
+    <tr>
+      <th id="T_ea969_level0_row4" class="row_heading level0 row4" >('aare_bern_caveltin', '2017-05-06')</th>
+      <td id="T_ea969_row4_col0" class="data row4 col0" >aare_bern_caveltin</td>
+      <td id="T_ea969_row4_col1" class="data row4 col1" >Muri bei Bern</td>
+      <td id="T_ea969_row4_col2" class="data row4 col2" >2017-05-06</td>
+      <td id="T_ea969_row4_col3" class="data row4 col3" >126.000</td>
+      <td id="T_ea969_row4_col4" class="data row4 col4" >training</td>
+      <td id="T_ea969_row4_col5" class="data row4 col5" >Gcaps</td>
+      <td id="T_ea969_row4_col6" class="data row4 col6" >0.000</td>
+      <td id="T_ea969_row4_col7" class="data row4 col7" >0.000</td>
+      <td id="T_ea969_row4_col8" class="data row4 col8" >Bern</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="echantillons-sentiers-pedestre">
+<h3><span class="section-number">2.1.9. </span>Échantillons sentiers pédèstre<a class="headerlink" href="#echantillons-sentiers-pedestre" title="Permalink to this heading">#</a></h3>
+<p>Le lien entre les résultats de ces sites et le lac n’est pas clair. Nous ne disposons pas de données antérieures à 2020 pour les Alpes et les associations n’ont pas manifesté d’intérêt soutenu pour continuer ce projet.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ces résultats sont intéressants car ils représentent des zones où l’on ne s’attend pas à trouver des déchets. Dans ce contexte, les échantillons prélevés sur les sentiers de randonnée sont équivalents à ceux prélevés sur les plages. Des efforts considérables sont également déployés à tous les niveaux pour entretenir ces ressources.</p>
+<p>L’élaboration d’un calendrier d’échantillonnage et la définition d’objectifs régionaux à cet égard peuvent inciter d’autres acteurs à agir.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_3b6fc tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_3b6fc tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_3b6fc tr {
+  font-size: 14px;
+}
+#T_3b6fc th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_3b6fc caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_3b6fc">
+  <caption>Les données relatives aux sentiers de randonnée proviennent du rapport fédéral. Elles ont été réalisées par deux personnes au cours d'une saison estivale.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_3b6fc_level0_col0" class="col_heading level0 col0" >site</th>
+      <th id="T_3b6fc_level0_col1" class="col_heading level0 col1" >municipalités</th>
+      <th id="T_3b6fc_level0_col2" class="col_heading level0 col2" >date</th>
+      <th id="T_3b6fc_level0_col3" class="col_heading level0 col3" >jdl</th>
+      <th id="T_3b6fc_level0_col4" class="col_heading level0 col4" >Projet</th>
+      <th id="T_3b6fc_level0_col5" class="col_heading level0 col5" >code</th>
+      <th id="T_3b6fc_level0_col6" class="col_heading level0 col6" >pcs/m</th>
+      <th id="T_3b6fc_level0_col7" class="col_heading level0 col7" >quantité</th>
+      <th id="T_3b6fc_level0_col8" class="col_heading level0 col8" >canton</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_3b6fc_level0_row0" class="row_heading level0 row0" >('clean-up-tour-airolo', '2021-08-05')</th>
+      <td id="T_3b6fc_row0_col0" class="data row0 col0" >airolo</td>
+      <td id="T_3b6fc_row0_col1" class="data row0 col1" >Airolo</td>
+      <td id="T_3b6fc_row0_col2" class="data row0 col2" >2021-08-05</td>
+      <td id="T_3b6fc_row0_col3" class="data row0 col3" >217</td>
+      <td id="T_3b6fc_row0_col4" class="data row0 col4" >testing</td>
+      <td id="T_3b6fc_row0_col5" class="data row0 col5" >Gcaps</td>
+      <td id="T_3b6fc_row0_col6" class="data row0 col6" >0.000</td>
+      <td id="T_3b6fc_row0_col7" class="data row0 col7" >0</td>
+      <td id="T_3b6fc_row0_col8" class="data row0 col8" >Ticino</td>
+    </tr>
+    <tr>
+      <th id="T_3b6fc_level0_row1" class="row_heading level0 row1" >('clean-up-tour-andermatt', '2021-06-19')</th>
+      <td id="T_3b6fc_row1_col0" class="data row1 col0" >andermatt</td>
+      <td id="T_3b6fc_row1_col1" class="data row1 col1" >Andermatt</td>
+      <td id="T_3b6fc_row1_col2" class="data row1 col2" >2021-06-19</td>
+      <td id="T_3b6fc_row1_col3" class="data row1 col3" >170</td>
+      <td id="T_3b6fc_row1_col4" class="data row1 col4" >testing</td>
+      <td id="T_3b6fc_row1_col5" class="data row1 col5" >Gcaps</td>
+      <td id="T_3b6fc_row1_col6" class="data row1 col6" >0.000</td>
+      <td id="T_3b6fc_row1_col7" class="data row1 col7" >0</td>
+      <td id="T_3b6fc_row1_col8" class="data row1 col8" >Uri</td>
+    </tr>
+    <tr>
+      <th id="T_3b6fc_level0_row2" class="row_heading level0 row2" >('clean-up-tour-cabanes-des-diablerets', '2021-08-28')</th>
+      <td id="T_3b6fc_row2_col0" class="data row2 col0" >cabanes-des-diablerets</td>
+      <td id="T_3b6fc_row2_col1" class="data row2 col1" >Ormont-Dessus</td>
+      <td id="T_3b6fc_row2_col2" class="data row2 col2" >2021-08-28</td>
+      <td id="T_3b6fc_row2_col3" class="data row2 col3" >240</td>
+      <td id="T_3b6fc_row2_col4" class="data row2 col4" >testing</td>
+      <td id="T_3b6fc_row2_col5" class="data row2 col5" >Gcaps</td>
+      <td id="T_3b6fc_row2_col6" class="data row2 col6" >0.000</td>
+      <td id="T_3b6fc_row2_col7" class="data row2 col7" >0</td>
+      <td id="T_3b6fc_row2_col8" class="data row2 col8" >Vaud</td>
+    </tr>
+    <tr>
+      <th id="T_3b6fc_level0_row3" class="row_heading level0 row3" >('clean-up-tour-charmey', '2021-05-08')</th>
+      <td id="T_3b6fc_row3_col0" class="data row3 col0" >charmey</td>
+      <td id="T_3b6fc_row3_col1" class="data row3 col1" >Val-de-Charmey</td>
+      <td id="T_3b6fc_row3_col2" class="data row3 col2" >2021-05-08</td>
+      <td id="T_3b6fc_row3_col3" class="data row3 col3" >128</td>
+      <td id="T_3b6fc_row3_col4" class="data row3 col4" >testing</td>
+      <td id="T_3b6fc_row3_col5" class="data row3 col5" >Gcaps</td>
+      <td id="T_3b6fc_row3_col6" class="data row3 col6" >0.100</td>
+      <td id="T_3b6fc_row3_col7" class="data row3 col7" >3</td>
+      <td id="T_3b6fc_row3_col8" class="data row3 col8" >Valais</td>
+    </tr>
+    <tr>
+      <th id="T_3b6fc_level0_row4" class="row_heading level0 row4" >('clean-up-tour-crans-montana', '2021-06-12')</th>
+      <td id="T_3b6fc_row4_col0" class="data row4 col0" >crans-montana</td>
+      <td id="T_3b6fc_row4_col1" class="data row4 col1" >Crans-Montana</td>
+      <td id="T_3b6fc_row4_col2" class="data row4 col2" >2021-06-12</td>
+      <td id="T_3b6fc_row4_col3" class="data row4 col3" >163</td>
+      <td id="T_3b6fc_row4_col4" class="data row4 col4" >testing</td>
+      <td id="T_3b6fc_row4_col5" class="data row4 col5" >Gcaps</td>
+      <td id="T_3b6fc_row4_col6" class="data row4 col6" >0.000</td>
+      <td id="T_3b6fc_row4_col7" class="data row4 col7" >0</td>
+      <td id="T_3b6fc_row4_col8" class="data row4 col8" >Valais</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="donnees-dimensionnelles">
+<h3><span class="section-number">2.1.10. </span>Données dimensionnelles<a class="headerlink" href="#donnees-dimensionnelles" title="Permalink to this heading">#</a></h3>
+<p>Nous ne listons pas les poids ici. Les méthodes utilisées pour enregistrer les poids diffèrent d’un groupe à l’autre. Cependant nous disposons de la longueur du rivage ou du sentier, de la superficie et du temps en minutes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le temps nécessaire à la réalisation d’un inventaire est souvent sous-estimé. Des inventaires de plusieurs milliers d’unités peuvent nécessiter 8 à 12 heures de comptage, mais seulement une heure de collecte.</p>
+<p>En fin de compte, la précision de vos données dépend des ressources allouées à cet effet. D’après notre expérience, les gens participent à la collecte mais pas au comptage.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_77ead tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_77ead tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_77ead tr {
+  font-size: 14px;
+}
+#T_77ead th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_77ead caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_77ead">
+  <caption>l'ampleur de l'effort en termes de surface, de distance et de temps.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_77ead_level0_col0" class="col_heading level0 col0" >m²</th>
+      <th id="T_77ead_level0_col1" class="col_heading level0 col1" >mètres</th>
+      <th id="T_77ead_level0_col2" class="col_heading level0 col2" >minutes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_77ead_level0_row0" class="row_heading level0 row0" >airolo</th>
+      <td id="T_77ead_row0_col0" class="data row0 col0" >57.000</td>
+      <td id="T_77ead_row0_col1" class="data row0 col1" >38</td>
+      <td id="T_77ead_row0_col2" class="data row0 col2" >99</td>
+    </tr>
+    <tr>
+      <th id="T_77ead_level0_row1" class="row_heading level0 row1" >andermatt</th>
+      <td id="T_77ead_row1_col0" class="data row1 col0" >800.000</td>
+      <td id="T_77ead_row1_col1" class="data row1 col1" >100</td>
+      <td id="T_77ead_row1_col2" class="data row1 col2" >220</td>
+    </tr>
+    <tr>
+      <th id="T_77ead_level0_row2" class="row_heading level0 row2" >cabanes-des-diablerets</th>
+      <td id="T_77ead_row2_col0" class="data row2 col0" >18.000</td>
+      <td id="T_77ead_row2_col1" class="data row2 col1" >12</td>
+      <td id="T_77ead_row2_col2" class="data row2 col2" >199</td>
+    </tr>
+    <tr>
+      <th id="T_77ead_level0_row3" class="row_heading level0 row3" >charmey</th>
+      <td id="T_77ead_row3_col0" class="data row3 col0" >150.000</td>
+      <td id="T_77ead_row3_col1" class="data row3 col1" >30</td>
+      <td id="T_77ead_row3_col2" class="data row3 col2" >220</td>
+    </tr>
+    <tr>
+      <th id="T_77ead_level0_row4" class="row_heading level0 row4" >crans-montana</th>
+      <td id="T_77ead_row4_col0" class="data row4 col0" >64.000</td>
+      <td id="T_77ead_row4_col1" class="data row4 col1" >43</td>
+      <td id="T_77ead_row4_col2" class="data row4 col2" >149</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="test">
+<h3><span class="section-number">2.1.11. </span>Test<a class="headerlink" href="#test" title="Permalink to this heading">#</a></h3>
+<p>Avant de passer à l’étape suivante. Nous vérifions les données par rapport au rapport fédéral. Nos résultats ici doivent correspondre à la page ici <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/lac-leman.html">Le Léman 2021</a></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_ce5d2 tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_ce5d2 tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_ce5d2 tr {
+  font-size: 14px;
+}
+#T_ce5d2 th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_ce5d2 caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_ce5d2">
+  <caption>Ces valeurs doivent correspondre à la médiane déclarée pour le même objet dans le rapport fédéral. </caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_ce5d2_level0_col0" class="col_heading level0 col0" >G112</th>
+      <th id="T_ce5d2_level0_col1" class="col_heading level0 col1" >G27</th>
+      <th id="T_ce5d2_level0_col2" class="col_heading level0 col2" >G30</th>
+      <th id="T_ce5d2_level0_col3" class="col_heading level0 col3" >G67</th>
+      <th id="T_ce5d2_level0_col4" class="col_heading level0 col4" >G70</th>
+      <th id="T_ce5d2_level0_col5" class="col_heading level0 col5" >G89</th>
+      <th id="T_ce5d2_level0_col6" class="col_heading level0 col6" >G95</th>
+      <th id="T_ce5d2_level0_col7" class="col_heading level0 col7" >Gfrags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_ce5d2_level0_row0" class="row_heading level0 row0" >pcs/m</th>
+      <td id="T_ce5d2_row0_col0" class="data row0 col0" >0.000</td>
+      <td id="T_ce5d2_row0_col1" class="data row0 col1" >0.470</td>
+      <td id="T_ce5d2_row0_col2" class="data row0 col2" >0.215</td>
+      <td id="T_ce5d2_row0_col3" class="data row0 col3" >0.090</td>
+      <td id="T_ce5d2_row0_col4" class="data row0 col4" >0.010</td>
+      <td id="T_ce5d2_row0_col5" class="data row0 col5" >0.055</td>
+      <td id="T_ce5d2_row0_col6" class="data row0 col6" >0.120</td>
+      <td id="T_ce5d2_row0_col7" class="data row0 col7" >0.615</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="l-ensemble-de-donnees-pour-le-lac">
+<h2><span class="section-number">2.2. </span>L’ensemble de données pour le lac<a class="headerlink" href="#l-ensemble-de-donnees-pour-le-lac" title="Permalink to this heading">#</a></h2>
+<p>Les résultats de l’enquête contiennent désormais toutes les informations décrites ici ou permettent d’accéder à d’autres informations sur l’événement.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_0c97e tr:nth-child(even) {
+  background-color: rgba(139, 69, 19, 0.08);
+}
+#T_0c97e tr:nth-child(odd) {
+  background: #FFF;
+}
+#T_0c97e tr {
+  font-size: 10px;
+}
+#T_0c97e th:nth-child(1) {
+  background-color: #FFF;
+  text-align: right;
+}
+#T_0c97e caption {
+  font-size: 14px;
+  font-style: italic;
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 10px;
+}
+</style>
+<table id="T_0c97e">
+  <caption>Résultats pour les emballages de bonbons. Les données de l'enquête comportent des étiquettes pour les relations inter et intra cantonales. C'est essentiel pour les replacer dans leur contexte.</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_0c97e_level0_col0" class="col_heading level0 col0" >échantillons</th>
+      <th id="T_0c97e_level0_col1" class="col_heading level0 col1" >site</th>
+      <th id="T_0c97e_level0_col2" class="col_heading level0 col2" >water_name_slug</th>
+      <th id="T_0c97e_level0_col3" class="col_heading level0 col3" >municipalités</th>
+      <th id="T_0c97e_level0_col4" class="col_heading level0 col4" >date</th>
+      <th id="T_0c97e_level0_col5" class="col_heading level0 col5" >jdl</th>
+      <th id="T_0c97e_level0_col6" class="col_heading level0 col6" >Projet</th>
+      <th id="T_0c97e_level0_col7" class="col_heading level0 col7" >code</th>
+      <th id="T_0c97e_level0_col8" class="col_heading level0 col8" >pcs/m</th>
+      <th id="T_0c97e_level0_col9" class="col_heading level0 col9" >quantité</th>
+      <th id="T_0c97e_level0_col10" class="col_heading level0 col10" >canton</th>
+      <th id="T_0c97e_level0_col11" class="col_heading level0 col11" >region</th>
+      <th id="T_0c97e_level0_col12" class="col_heading level0 col12" >land use</th>
+      <th id="T_0c97e_level0_col13" class="col_heading level0 col13" >zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_0c97e_level0_row0" class="row_heading level0 row0" >117</th>
+      <td id="T_0c97e_row0_col0" class="data row0 col0" >('anarchy-beach', '2018-04-02')</td>
+      <td id="T_0c97e_row0_col1" class="data row0 col1" >anarchy-beach</td>
+      <td id="T_0c97e_row0_col2" class="data row0 col2" >lac-leman</td>
+      <td id="T_0c97e_row0_col3" class="data row0 col3" >La Tour-de-Peilz</td>
+      <td id="T_0c97e_row0_col4" class="data row0 col4" >2018-04-02</td>
+      <td id="T_0c97e_row0_col5" class="data row0 col5" >92</td>
+      <td id="T_0c97e_row0_col6" class="data row0 col6" >training</td>
+      <td id="T_0c97e_row0_col7" class="data row0 col7" >G30</td>
+      <td id="T_0c97e_row0_col8" class="data row0 col8" >0.500</td>
+      <td id="T_0c97e_row0_col9" class="data row0 col9" >35</td>
+      <td id="T_0c97e_row0_col10" class="data row0 col10" >Vaud</td>
+      <td id="T_0c97e_row0_col11" class="data row0 col11" >Haut lac</td>
+      <td id="T_0c97e_row0_col12" class="data row0 col12" >1.000</td>
+      <td id="T_0c97e_row0_col13" class="data row0 col13" >lac</td>
+    </tr>
+    <tr>
+      <th id="T_0c97e_level0_row1" class="row_heading level0 row1" >293</th>
+      <td id="T_0c97e_row1_col0" class="data row1 col0" >('anarchy-beach', '2021-03-24')</td>
+      <td id="T_0c97e_row1_col1" class="data row1 col1" >anarchy-beach</td>
+      <td id="T_0c97e_row1_col2" class="data row1 col2" >lac-leman</td>
+      <td id="T_0c97e_row1_col3" class="data row1 col3" >La Tour-de-Peilz</td>
+      <td id="T_0c97e_row1_col4" class="data row1 col4" >2021-03-24</td>
+      <td id="T_0c97e_row1_col5" class="data row1 col5" >83</td>
+      <td id="T_0c97e_row1_col6" class="data row1 col6" >training</td>
+      <td id="T_0c97e_row1_col7" class="data row1 col7" >G30</td>
+      <td id="T_0c97e_row1_col8" class="data row1 col8" >0.210</td>
+      <td id="T_0c97e_row1_col9" class="data row1 col9" >6</td>
+      <td id="T_0c97e_row1_col10" class="data row1 col10" >Vaud</td>
+      <td id="T_0c97e_row1_col11" class="data row1 col11" >Haut lac</td>
+      <td id="T_0c97e_row1_col12" class="data row1 col12" >1.000</td>
+      <td id="T_0c97e_row1_col13" class="data row1 col13" >lac</td>
+    </tr>
+    <tr>
+      <th id="T_0c97e_level0_row2" class="row_heading level0 row2" >469</th>
+      <td id="T_0c97e_row2_col0" class="data row2 col0" >('arabie', '2016-01-24')</td>
+      <td id="T_0c97e_row2_col1" class="data row2 col1" >arabie</td>
+      <td id="T_0c97e_row2_col2" class="data row2 col2" >lac-leman</td>
+      <td id="T_0c97e_row2_col3" class="data row2 col3" >Vevey</td>
+      <td id="T_0c97e_row2_col4" class="data row2 col4" >2016-01-24</td>
+      <td id="T_0c97e_row2_col5" class="data row2 col5" >24</td>
+      <td id="T_0c97e_row2_col6" class="data row2 col6" >training</td>
+      <td id="T_0c97e_row2_col7" class="data row2 col7" >G30</td>
+      <td id="T_0c97e_row2_col8" class="data row2 col8" >10.320</td>
+      <td id="T_0c97e_row2_col9" class="data row2 col9" >413</td>
+      <td id="T_0c97e_row2_col10" class="data row2 col10" >Vaud</td>
+      <td id="T_0c97e_row2_col11" class="data row2 col11" >Haut lac</td>
+      <td id="T_0c97e_row2_col12" class="data row2 col12" >0.960</td>
+      <td id="T_0c97e_row2_col13" class="data row2 col13" >lac</td>
+    </tr>
+    <tr>
+      <th id="T_0c97e_level0_row3" class="row_heading level0 row3" >645</th>
+      <td id="T_0c97e_row3_col0" class="data row3 col0" >('arabie', '2016-04-02')</td>
+      <td id="T_0c97e_row3_col1" class="data row3 col1" >arabie</td>
+      <td id="T_0c97e_row3_col2" class="data row3 col2" >lac-leman</td>
+      <td id="T_0c97e_row3_col3" class="data row3 col3" >Vevey</td>
+      <td id="T_0c97e_row3_col4" class="data row3 col4" >2016-04-02</td>
+      <td id="T_0c97e_row3_col5" class="data row3 col5" >93</td>
+      <td id="T_0c97e_row3_col6" class="data row3 col6" >training</td>
+      <td id="T_0c97e_row3_col7" class="data row3 col7" >G30</td>
+      <td id="T_0c97e_row3_col8" class="data row3 col8" >0.520</td>
+      <td id="T_0c97e_row3_col9" class="data row3 col9" >21</td>
+      <td id="T_0c97e_row3_col10" class="data row3 col10" >Vaud</td>
+      <td id="T_0c97e_row3_col11" class="data row3 col11" >Haut lac</td>
+      <td id="T_0c97e_row3_col12" class="data row3 col12" >0.960</td>
+      <td id="T_0c97e_row3_col13" class="data row3 col13" >lac</td>
+    </tr>
+    <tr>
+      <th id="T_0c97e_level0_row4" class="row_heading level0 row4" >821</th>
+      <td id="T_0c97e_row4_col0" class="data row4 col0" >('arabie', '2016-08-25')</td>
+      <td id="T_0c97e_row4_col1" class="data row4 col1" >arabie</td>
+      <td id="T_0c97e_row4_col2" class="data row4 col2" >lac-leman</td>
+      <td id="T_0c97e_row4_col3" class="data row4 col3" >Vevey</td>
+      <td id="T_0c97e_row4_col4" class="data row4 col4" >2016-08-25</td>
+      <td id="T_0c97e_row4_col5" class="data row4 col5" >238</td>
+      <td id="T_0c97e_row4_col6" class="data row4 col6" >training</td>
+      <td id="T_0c97e_row4_col7" class="data row4 col7" >G30</td>
+      <td id="T_0c97e_row4_col8" class="data row4 col8" >0.650</td>
+      <td id="T_0c97e_row4_col9" class="data row4 col9" >26</td>
+      <td id="T_0c97e_row4_col10" class="data row4 col10" >Vaud</td>
+      <td id="T_0c97e_row4_col11" class="data row4 col11" >Haut lac</td>
+      <td id="T_0c97e_row4_col12" class="data row4 col12" >0.960</td>
+      <td id="T_0c97e_row4_col13" class="data row4 col13" >lac</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<br />
+<br />
+This script updated 04/09/2023 in Biel, CH
+<p>❤️ what you do - faites ce que vous ❤️</p>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Git repo: https://github.com/hammerdirt-analyst/cantonal_reports.git
+
+Git branch: main
+
+numpy  : 1.25.2
+pandas : 2.0.3
+slugify: 8.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>analyst at hammerdirt</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cantonal_report.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Rapport Cantonal: Valais</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-contexte-de-l-observation">2.1. Le contexte de l’observation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultats-d-inventaire">2.1.1. Résultats d’inventaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#debut-nov-2015-fin-decembre-2022">2.1.1.1. Début: nov 2015, fin: décembre 2022</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-du-site-d-inventaire">2.1.2. Détails du site d’inventaire</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categories-d-objets">2.1.3. Catégories d’objets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-sol">2.1.4. Utilisation du sol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cantonal">2.1.5. Cantonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regional">2.1.6. Régional</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#municipal">2.1.7. Municipal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#echantillons-de-bord-des-rivieres">2.1.8. Échantillons de bord des rivières</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#echantillons-sentiers-pedestre">2.1.9. Échantillons sentiers pédèstre</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#donnees-dimensionnelles">2.1.10. Données dimensionnelles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test">2.1.11. Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l-ensemble-de-donnees-pour-le-lac">2.2. L’ensemble de données pour le lac</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By analyst@
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+   hammerdirt 2023
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
