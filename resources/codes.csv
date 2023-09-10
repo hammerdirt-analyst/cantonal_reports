@@ -1,0 +1,276 @@
+code,material,description,parent_code,groupname
+G708,Metal,Batons de ski,G199,recreation
+G212,Chemicals,Oil nodules or coal fragments -- not from a BBQ,Parent code,unclassified
+G213,Chemicals,Paraffin wax,Parent code,recreation
+G214,Chemicals,Oil/tar,Parent code,infrastructure
+G135,Cloth,"Clothes, footware, headware, gloves",Parent code,personal items
+G136,Cloth,Shoes,Parent code,personal items
+G137,Cloth,"Clothing, towels & rags",Parent code,personal items
+G138,Cloth,Shoes and sandals,Parent code,personal items
+G139,Cloth,Backpacks,Parent code,personal items
+G140,Cloth,"Bags, burlap, hessian, jute or hemp",Parent code,agriculture
+G141,Cloth,Carpet,Parent code,unclassified
+G142,Cloth,"Rope , string or nets",Parent code,recreation
+G143,Cloth,Sails and canvas,Parent code,recreation
+G144,Cloth,Tampons,Parent code,waste water
+G145,Cloth,Other textiles,Parent code,personal items
+G712,Cloth,Gants de ski,G135,recreation
+G902,Cloth,"Mask medical, cloth",G145,personal items
+G200,Glass,"Glass drink bottles, pieces",Parent code,food and drink
+G201,Glass,"Jars, includes pieces",Parent code,food and drink
+G202,Glass,Light bulbs,Parent code,unclassified
+G203,Glass,"Tableware ceramic or glass, cups, plates, pieces",Parent code,food and drink
+G204,Glass,"Construction material; bricks, pipes, cement",Parent code,infrastructure
+G205,Glass,Fluorescent light tubes,Parent code,unclassified
+G206,Glass,Glass buoys,Parent code,recreation
+G207,Glass,Octopus pots,Parent code,unclassified
+G208,Glass,Glass or ceramic fragments > 2.5 cm,Parent code,unclassified
+G209,Glass,Large glass objects,Parent code,unclassified
+G210,Glass,Other glass/ceramic,Parent code,unclassified
+G917,Glass,Terracotta balls,G210,unclassified
+G921,Glass,Ceramic tile and pieces,G204,infrastructure
+G174,Metal,Aerosol spray cans,Parent code,infrastructure
+G175,Metal,"Cans, beverage",Parent code,food and drink
+G176,Metal,"Cans, food",Parent code,food and drink
+G177,Metal,"Foil wrappers, aluminum foil",Parent code,food and drink
+G178,Metal,"Metal bottle caps, lids & pull tabs from cans",Parent code,food and drink
+G179,Metal,Disposable BBQs,Parent code,food and drink
+G180,Metal,Appliances,Parent code,unclassified
+G181,Metal,"Tableware metal;  cups, cutlery etc.",Parent code,food and drink
+G182,Metal,"Fishing; hooks, weights, lures, sinkers etc.",Parent code,recreation
+G183,Metal,Fish hook remains,Parent code,recreation
+G184,Metal,Lobster pots,Parent code,unclassified
+G185,Metal,Middle size containers,Parent code,unclassified
+G186,Metal,Industrial scrap,Parent code,infrastructure
+G187,Metal,Drums,Parent code,infrastructure
+G188,Metal,Other cans < 4 L,Parent code,infrastructure
+G189,Metal,"Gas bottles, drums and buckets > 4 L",Parent code,infrastructure
+G190,Metal,Paint cans,Parent code,infrastructure
+G191,Metal,Wire and mesh,Parent code,agriculture
+G192,Metal,Barrels,Parent code,agriculture
+G193,Metal,car parts and batteries,Parent code,unclassified
+G194,Metal,"Cables, metal wire(s) often inside rubber or plastic tubes",Parent code,infrastructure
+G195,Metal,Batteries - household,Parent code,personal items
+G196,Metal,Large metallic objects,Parent code,unclassified
+G197,Metal,Other metal,Parent code,infrastructure
+G198,Metal,Other metal pieces < 50cm,Parent code,infrastructure
+G199,Metal,Other metal pieces > 50cm,Parent code,infrastructure
+G705,Metal,Screws and bolts,G197,infrastructure
+G906,Metal,coffee capsules aluminum,G177,food and drink
+G918,Metal,"Safety pins, paper clips, small metal utility items",G198,personal items
+G919,Metal,"Nails, screws, bolts etc.",G197,infrastructure
+G929,Metal,"Electronics and pieces; sensors, headsets etc.",G198,personal items
+G945,Metal,Razor blades,G198,personal items
+G146,Paper,"Paper, cardboard",Parent code,packaging non food
+G147,Paper,Paper bags,Parent code,packaging non food
+G148,Paper,Cardboard (boxes and fragments),Parent code,packaging non food
+G149,Paper,Paper packaging,Parent code,packaging non food
+G150,Paper,"Milk cartons, tetrapack",Parent code,food and drink
+G151,Paper,"Cartons, Tetrapacks",Parent code,food and drink
+G152,Paper,"Cigarette boxes, tobacco related paper/cardboard",Parent code,tobacco
+G153,Paper,"Cups, food containers, wrappers (paper)",Parent code,food and drink
+G154,Paper,Newspapers or magazines,Parent code,personal items
+G155,Paper,Fireworks paper tubes and fragments,Parent code,recreation
+G156,Paper,Paper fragments,Parent code,packaging non food
+G157,Paper,Paper,Parent code,packaging non food
+G158,Paper,Other paper items,Parent code,packaging non food
+G923,Paper,"Tissue, toilet paper, napkins, paper towels",G158,personal items
+G1,Plastic,Six pack rings,Parent code,food and drink
+G10,Plastic,Food containers single use foamed or plastic,Parent code,food and drink
+G100,Plastic,Medical; containers/tubes/ packaging,Parent code,waste water
+G101,Plastic,Dog feces bag,Parent code,personal items
+G102,Plastic,Flip-flops,Parent code,personal items
+G103,Plastic,Plastic fragments rounded <5mm,Parent code,micro plastics (< 5mm)
+G104,Plastic,Plastic fragments subrounded <5mm,Parent code,micro plastics (< 5mm)
+G105,Plastic,Plastic fragments subangular <5mm,Parent code,micro plastics (< 5mm)
+G106,Plastic,Plastic fragments angular <5mm,Parent code,micro plastics (< 5mm)
+G107,Plastic,Cylindrical pellets < 5mm,Parent code,micro plastics (< 5mm)
+G108,Plastic,disk pellets  <5mm,Parent code,micro plastics (< 5mm)
+G109,Plastic,Flat pellets  <5mm,Parent code,micro plastics (< 5mm)
+G11,Plastic,"Cosmetics for the beach, e.g. sunblock",Parent code,recreation
+G110,Plastic,Ovoid pellets < 5mm,Parent code,micro plastics (< 5mm)
+G111,Plastic,Spheruloid pellets < 5mm,Parent code,micro plastics (< 5mm)
+G112,Plastic,Industrial pellets (nurdles),Parent code,micro plastics (< 5mm)
+G113,Plastic,Filaments  <5mm,Parent code,micro plastics (< 5mm)
+G114,Plastic,Films  <5mm,Parent code,micro plastics (< 5mm)
+G115,Plastic,Foamed  plastic <5mm,Parent code,micro plastics (< 5mm)
+G116,Plastic,Granules <5mm,Parent code,micro plastics (< 5mm)
+G117,Plastic,Styrofoam < 5mm,Parent code,micro plastics (< 5mm)
+G118,Plastic,Small industrial spheres <5mm,Parent code,micro plastics (< 5mm)
+G119,Plastic,Sheetlike user plastic (>1mm),Parent code,micro plastics (< 5mm)
+G12,Plastic,"Cosmetics, non-beach use personal care containers",Parent code,personal items
+G120,Plastic,Threadlike user plastic ( >1mm),Parent code,micro plastics (< 5mm)
+G121,Plastic,Foamed user plastic ( >1mm),Parent code,micro plastics (< 5mm)
+G122,Plastic,Plastic fragments ( >1mm),Parent code,micro plastics (< 5mm)
+G123,Plastic,Polyurethane granules < 5mm,Parent code,micro plastics (< 5mm)
+G124,Plastic,Other plastic or foam products,Parent code,unclassified
+G13,Plastic,"Bottles, containers, drums to transport, store material",Parent code,agriculture
+G14,Plastic,Engine oil bottles,Parent code,unclassified
+G15,Plastic,Engine oil bottles > 50cm,Parent code,unclassified
+G16,Plastic,Jerry cans,Parent code,unclassified
+G17,Plastic,Injection gun cartridge,Parent code,infrastructure
+G18,Plastic,Crates/baskets,Parent code,agriculture
+G19,Plastic,Car parts,Parent code,unclassified
+G2,Plastic,Bags,Parent code,packaging non food
+G20,Plastic,Caps and lids,Parent code,packaging non food
+G21,Plastic,Drink lids,Parent code,food and drink
+G211,Plastic,"Other medical (swabs, bandaging, adhesive plaster)",Parent code,personal items
+G22,Plastic,"Lids for chemicals, detergents (non-food)",Parent code,infrastructure
+G23,Plastic,Lids unidentified,Parent code,packaging non food
+G24,Plastic,Lid/cap rings from plastic bottles/containers,Parent code,food and drink
+G25,Plastic,"Tobacco; plastic packaging, containers",Parent code,tobacco
+G26,Plastic,Cigarette lighters,Parent code,tobacco
+G27,Plastic,Cigarette filters,Parent code,tobacco
+G28,Plastic,"Pens, lids, mechanical pencils etc.",Parent code,personal items
+G29,Plastic,"Combs, brushes and sunglasses",Parent code,personal items
+G3,Plastic,Bags; plastic shopping/carrier/grocery and pieces,Parent code,packaging non food
+G30,Plastic,"Food wrappers; candy, snacks",Parent code,food and drink
+G31,Plastic,Lollypop sticks,Parent code,food and drink
+G32,Plastic,Toys and party favors,Parent code,recreation
+G33,Plastic,"Cups, lids, single use foamed and hard plastic",Parent code,food and drink
+G34,Plastic,"Cutlery, plates and trays",Parent code,food and drink
+G35,Plastic,Straws and stirrers,Parent code,food and drink
+G36,Plastic,"Bags/sacks heavy duty plastic for 25 Kg or more; animal feed, fertilizers, garden trash etc.",Parent code,agriculture
+G37,Plastic,Mesh bags,Parent code,personal items
+G38,Plastic,"Coverings; plastic packaging, sheeting for protecting large cargo items",Parent code,unclassified
+G39,Plastic,Gloves,Parent code,personal items
+G4,Plastic,"Small plastic bags; freezer, zip-lock etc.",Parent code,packaging non food
+G40,Plastic,Gloves household/gardening,Parent code,personal items
+G41,Plastic,Glove industrial/professional,Parent code,agriculture
+G42,Plastic,Crab lobster pots,Parent code,unclassified
+G43,Plastic,"Tags fishing or industry (security tags, seals)",Parent code,recreation
+G44,Plastic,Octopus pots,Parent code,unclassified
+G45,Plastic,Mussel nets,Parent code,unclassified
+G46,Plastic,Oyster trays,Parent code,unclassified
+G47,Plastic,Sheeting from mussel culture,Parent code,unclassified
+G48,Plastic,"Rope, synthetic",Parent code,recreation
+G49,Plastic,Rope > 1cm,Parent code,recreation
+G5,Plastic,Generic plastic bags,Parent code,packaging non food
+G50,Plastic,String < 1cm,Parent code,recreation
+G51,Plastic,Fishing net,Parent code,recreation
+G52,Plastic,Nets and pieces,Parent code,recreation
+G53,Plastic,Nets and pieces < 50cm,Parent code,recreation
+G54,Plastic,Nets and pieces > 50cm,Parent code,recreation
+G55,Plastic,Fishing line (entangled),Parent code,recreation
+G56,Plastic,Tangled nets,Parent code,recreation
+G57,Plastic,Fish boxes,Parent code,recreation
+G58,Plastic,Foam fish box,Parent code,recreation
+G59,Plastic,Fishing line monofilament (angling),Parent code,recreation
+G6,Plastic,"Bottles and containers, plastic non food/drink",Parent code,packaging non food
+G60,Plastic,Light sticks,Parent code,recreation
+G61,Plastic,Other fishing related,Parent code,recreation
+G62,Plastic,Floats for nets,Parent code,unclassified
+G63,Plastic,Buoys,Parent code,recreation
+G64,Plastic,Fenders,Parent code,unclassified
+G65,Plastic,Buckets,Parent code,agriculture
+G66,Plastic,"Straps/bands;  hard, plastic package fastener",Parent code,infrastructure
+G67,Plastic,Industrial sheeting,Parent code,agriculture
+G68,Plastic,Fiberglass fragments,Parent code,infrastructure
+G69,Plastic,Helmets or hardhats,Parent code,infrastructure
+G7,Plastic,Drink bottles < = 0.5L,Parent code,food and drink
+G70,Plastic,Shotgun cartridges,Parent code,recreation
+G700,Plastic,The results from a clean up event,G700,unclassified
+G703,Plastic,piquet de ballisage,G124,infrastructure
+G704,Plastic,Brosse de télésiège,G124,infrastructure
+G706,Plastic,Abonnement de ski,G124,recreation
+G707,Plastic,étiquette d’équipement de ski,G124,recreation
+G709,Plastic,"Batons de ski parties (rondelles, attaches)",G124,recreation
+G71,Plastic,Shoes sandals,Parent code,personal items
+G710,Plastic,"Ski / Snowboards (ski, fixations et autres pièces)",G79,recreation
+G711,Plastic,Chaufferette,G124,recreation
+G713,Plastic,Carpet from ski lift,G124,infrastructure
+G72,Plastic,Traffic cones,Parent code,infrastructure
+G73,Plastic,Foamed items & pieces (non packaging/insulation) foamed sponge material,Parent code,recreation
+G74,Plastic,Foam packaging/insulation/polyurethane,Parent code,infrastructure
+G75,Plastic,Plastic/polystyrene pcs 0.5 - 2.5 cm,Parent code,plastic pieces
+G76,Plastic,Plastic/foamed polystyrene 2.5 > < 50,Parent code,plastic pieces
+G77,Plastic,Plastic or polystyrene  > 50cm,Parent code,plastic pieces
+G78,Plastic,Plastic pieces 0.5cm - 2.5cm,Parent code,plastic pieces
+G79,Plastic,Plastic pieces 2.5cm - 50cm,Parent code,plastic pieces
+G8,Plastic,Drink bottles  > 0.5L,Parent code,food and drink
+G80,Plastic,Plastic pieces > 50cm,Parent code,plastic pieces
+G81,Plastic,Foamed polystyrene pieces 0.5cm - 2.5cm,Parent code,infrastructure
+G82,Plastic,Foam polystyrene  2.5 - 50cm,Parent code,infrastructure
+G83,Plastic,Polystyrene pieces > 50cm,Parent code,infrastructure
+G84,Plastic,CD or CD box,Parent code,personal items
+G85,Plastic,Salt packaging,Parent code,unclassified
+G86,Plastic,Fin trees,Parent code,recreation
+G87,Plastic,"Tape, masking/duct/packing",Parent code,infrastructure
+G88,Plastic,Telephone incl. parts,Parent code,personal items
+G89,Plastic,Plastic construction waste,Parent code,infrastructure
+G9,Plastic,"Cleaner, chemical bottles & containers",Parent code,infrastructure
+G90,Plastic,Plastic flower pots,Parent code,agriculture
+G901,Plastic,"Mask medical, synthetic",G124,personal items
+G903,Plastic,Hand sanitizer containers & packets,G12,personal items
+G904,Plastic,"Fireworks; rocket caps, exploded parts & packaging",G124,recreation
+G905,Plastic,"Hair clip,  hair ties, personal accessories plastic",G124,personal items
+G907,Plastic,coffee capsules plastic,G124,food and drink
+G908,Plastic,"Tape; electrical, insulating",G124,infrastructure
+G909,Plastic,"Foamed plastic insulation, spray and foam board pieces 0.5- 2.5cm",G74,infrastructure
+G91,Plastic,Biomass holder,Parent code,waste water
+G910,Plastic,"Foamed plastic insulation, spray and foam board pieces  2.5cm - 50cm",G74,infrastructure
+G911,Plastic,Foam expanded polystyrene pieces 0.5 - 2.5 cm,G81,infrastructure
+G912,Plastic,Foam expanded polystyrene pieces 2.5 - 50cm,G82,infrastructure
+G913,Plastic,Pacifier,G124,personal items
+G914,Plastic,"Paperclips, clothespins, plastic utility items",G124,personal items
+G915,Plastic,"Reflectors, plastic mobility items",G124,personal items
+G92,Plastic,Bait containers,Parent code,recreation
+G922,Plastic,"Labels, bar codes",G124,packaging non food
+G925,Plastic,"Packets: desiccant/ moisture absorbers, plastic case filled with silica",G124,packaging non food
+G926,Plastic,"Chewing gum, often contains plastics",G124,food and drink
+G927,Plastic,"String trimmer line, used to cut grass, weeds, and shrubbery",G124,infrastructure
+G928,Plastic,Ribbons and bows,G124,personal items
+G93,Plastic,"Cable ties; steggel, zip, zap straps",Parent code,infrastructure
+G930,Plastic,Foam earplugs,G124,personal items
+G931,Plastic,"Tape-caution for barrier, police, construction etc.",G124,infrastructure
+G932,Plastic,"Bio-beads, micro plastic for wastewater treatment, irregular shape, ridged sides < 5mm",G91,waste water
+G933,Plastic,"Bags, cases for accessories; glasses, electronics, incl. straps, pieces, plstc. nylon etc.",G124,personal items
+G934,Plastic,"Sandbag, plastic for flood, erosion control etc..",G124,agriculture
+G935,Plastic,"Walking stick pads and pieces, often elastomeric material",G124,personal items
+G936,Plastic,Sheeting ag. greenhouse film,G67,agriculture
+G937,Plastic,Pheromone baits for vineyards,G124,agriculture
+G938,Plastic,"Toothpicks, dental floss plastic",G124,food and drink
+G939,Plastic,"Flowers, plants plastic",G124,personal items
+G94,Plastic,Table cloth,Parent code,recreation
+G940,Plastic,Foamed EVA (flexible plastic) for crafts & watersports,G73,recreation
+G941,Plastic,Packaging films nonfood or unknown,G124,packaging non food
+G942,Plastic,"Plastic shavings from lathes, CNC machining",G124,unclassified
+G943,Plastic,"Fencing agriculture, plastic",G124,agriculture
+G944,Plastic,Pellet mass from injection molding,G112,unclassified
+G95,Plastic,Cotton bud/swab sticks,Parent code,waste water
+G96,Plastic,Sanitary pads /panty liners/tampons and applicators,Parent code,waste water
+G97,Plastic,Toilet fresheners,Parent code,waste water
+G98,Plastic,Diapers - wipes,Parent code,waste water
+G99,Plastic,Syringes - needles,Parent code,personal items
+G125,Rubber,Balloons and balloon sticks,Parent code,recreation
+G126,Rubber,Balls,Parent code,recreation
+G127,Rubber,Rubber boots,Parent code,personal items
+G128,Rubber,Tires and belts,Parent code,unclassified
+G129,Rubber,Inner tubes and rubber sheets,Parent code,unclassified
+G130,Rubber,Wheels,Parent code,unclassified
+G131,Rubber,Rubber bands,Parent code,personal items
+G132,Rubber,Bobbers (fishing),Parent code,recreation
+G133,Rubber,Condoms incl. packaging,Parent code,waste water
+G134,Rubber,Other rubber,Parent code,unclassified
+G900,Rubber,Gloves latex  personal protective equipment,G134,personal items
+G998,Undefined,No exposed shoreline,Parent code,unclassified
+G999,Unidentified,No objects found on this survey,Parent code,unclassified
+G159,Wood,Corks,Parent code,food and drink
+G160,Wood,Pallets,Parent code,infrastructure
+G161,Wood,Processed timber,Parent code,agriculture
+G162,Wood,Crates,Parent code,infrastructure
+G163,Wood,Crab lobster pots,Parent code,unclassified
+G164,Wood,Fish boxes,Parent code,recreation
+G165,Wood,"Ice cream sticks, toothpicks, chopsticks",Parent code,food and drink
+G166,Wood,Paint brushes,Parent code,infrastructure
+G167,Wood,Matches or fireworks,Parent code,recreation
+G168,Wood,Wood boards,Parent code,agriculture
+G169,Wood,"Beams, dunnage",Parent code,infrastructure
+G170,Wood,Wood (processed),Parent code,agriculture
+G171,Wood,Other wood < 50cm,Parent code,agriculture
+G172,Wood,Other wood > 50cm,Parent code,agriculture
+G173,Wood,Other,Parent code,unclassified
+G702,Wood,piquet de ballisage,G173,infrastructure
+G916,Wood,Pencils and pieces,G170,personal items
+Gfrags,Plastic,Fragmented plastics,Parent code,plastic pieces
+Gfoam,Plastic,Expanded polystyrene,Parent code,infrastructure

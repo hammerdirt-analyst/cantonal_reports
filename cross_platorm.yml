@@ -1,0 +1,15 @@
+name: cantonal_report
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - scipy
+  - pandas
+  - statsmodels
+  - seaborn
+  - ipython
+  - jupyterlab
+  - scikit-learn
+  - jupyter-book
+prefix: /home/roger/anaconda3/envs/cantonal_report

@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: titlepage
+options:
+    numbered: True
+chapters:
+- file: random_variables
+- file: valais
+- file: vaud
+- file: geneve
+
+
+
+
+   
+    
+   
+ 

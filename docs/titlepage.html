@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet : Rapport cantonal &#8212; Projet de Rapport cantonal</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'titlepage';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Les variables aléatoires" href="random_variables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Projet de Rapport cantonal</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="random_variables.html">1. Les variables aléatoires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valais.html">2. Valais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vaud.html">3. Vaud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geneve.html">4. Genève</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hammerdirt-analyst/cantonal_reports" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hammerdirt-analyst/cantonal_reports/issues/new?title=Issue%20on%20page%20%2Ftitlepage.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Projet : Rapport cantonal</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif">Objectif</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#densite-des-dechets-le-long-des-sentiers-des-rivieres-et-des-lacs">Densité des déchets le long des sentiers, des rivières et des lacs.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contexte">Contexte</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="projet-rapport-cantonal">
+<h1>Projet : Rapport cantonal<a class="headerlink" href="#projet-rapport-cantonal" title="Permalink to this heading">#</a></h1>
+<p><em>doc version: 1, doc type: repository, doc title: Rapport Cantonal: Roger Erismann, <a class="reference external" href="mailto:roger&#37;&#52;&#48;hammerdirt&#46;ch">roger<span>&#64;</span>hammerdirt<span>&#46;</span>ch</a></em></p>
+<p>Ce rapport fait suite à une question soulevée le 18 octobre 2021 <a class="reference external" href="https://github.com/hammerdirt-analyst/IQAASL-End-0f-Sampling-2021/issues/6#issue-1029522442">issue 6: rapport cantonal</a>. Suite à une conversation avec un représentant du canton du Valais. À l’époque, nous ne pouvions pas répondre directement, car le rapport fédéral n’était pas complet. Après la publication initiale du rapport fédéral, l’OFEV a entrepris une reconception et une révision complètes. Le produit fini de ce travail constitue la base de ce rapport.</p>
+<div class="section" id="objectif">
+<h2>Objectif<a class="headerlink" href="#objectif" title="Permalink to this heading">#</a></h2>
+<p>Il s’agit ici de définir les besoins d’information du canton dans le domaine de la densité des déchets. Le contexte est celui des cantons voisins et du plan d’eau qui les unit.</p>
+<ul class="simple">
+<li><p>Orienter les acteurs vers l’environnement de travail</p>
+<ul>
+<li><p>permettre la collaboration entre les différentes acteurs</p></li>
+</ul>
+</li>
+<li><p>Établir un vocabulaire standard cohérent avec le rapport fédéral</p>
+<ul>
+<li><p>normaliser la communication entre les acteurs</p></li>
+</ul>
+</li>
+<li><p>Définir les indicateurs clés avec les acteurs régionaux</p></li>
+</ul>
+<p>Pour faire avancer l’analyse des données, un consensus régional doit être établi sur la signification et l’interprétation de ces données. D’un point de vue analytique, il s’agit d’une question intéressante. Les données sont des données de comptage et comportent de nombreux éléments. Pour chaque échantillon, il y a au moins 230 façons possibles de catégoriser un objet. Lorsque les données topographiques sont examinées parallèlement aux résultats de l’enquête, il existe des relations claires entre le type et le niveau de développement autour d’un lieu d’enquête et le type et la quantité de déchets identifiés.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Si nous utilisons les données pour estimer l’état de l’environnement, nous répondons alors à la question suivante :</p>
+<blockquote>
+<div><p>Qu’est-ce que les bénévoles sont susceptibles de trouver et en quelle quantité ?</p>
+</div></blockquote>
+<p>C’est la réponse la plus honnête que l’on puisse tirer des données. L’efficacité des comptages dans le temps fait partie de ce que nous discutons ici.</p>
+</div>
+<div class="section" id="densite-des-dechets-le-long-des-sentiers-des-rivieres-et-des-lacs">
+<h3>Densité des déchets le long des sentiers, des rivières et des lacs.<a class="headerlink" href="#densite-des-dechets-le-long-des-sentiers-des-rivieres-et-des-lacs" title="Permalink to this heading">#</a></h3>
+<p>Les données de ce rapport sont une combinaison d’observations de différentes personnes suivant un protocole standardisé. Les méthodes utilisées sont basées sur le guide original pour la surveillance des déchets marins publié par l’Union européenne en 2013 (<a class="reference external" href="https://mcc.jrc.ec.europa.eu/documents/201702074014.pdf">Guide</a>). L’application aux sites en Suisse a été discutée ici (<a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/baselines.html#zahlen-von-abfallobjekten-am-strand-ein-uberblick">IQAASL</a>). Rappelons que l’identification des objets est soumise à l’expérience de la personne qui effectue le relevé. <strong>Nous considérons donc que ces observations constituent une estimation raisonnable de la quantité minimale de débris présents au moment de l’enquête</strong>.</p>
+<p>Les données des Alpes ont été collectées pour comprendre comment ce type d’activité pourrait être combiné avec des événements de nettoyage plus importants et pour tester des techniques d’échantillonnage qui pourraient être adaptées au terrain. La liste des catégories et des définitions utilisées pour identifier les objets est la même que celle utilisée lors de l’étude des rivières ou des lacs. Les résultats de l’étude sont disponibles ici <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/alpes_valaisannes.html">Alpen und der Jura</a>. Il appartient aux acteurs régionaux de décider si cette méthode rend compte de manière adéquate de la densité des déchets et du contexte dans lequel ils se trouvent.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Une autre façon de considérer cette collection d’observations est que chaque groupe d’échantillonnage a collecté les données pour des raisons qui lui étaient propres, le protocole (<a class="reference external" href="https://mcc.jrc.ec.europa.eu/documents/201702074014.pdf">Guide</a>) fournissant un cadre pour assurer la cohérence et une voie pour l’interprétation des résultats. Toutefois, cela ne signifie pas que chaque groupe a interprété le protocole de la même manière, ni que tous les objets collectés ont été comptés. En limitant l’analyse à des codes-objets spécifiques, ceux qui apparaissent le plus souvent et/ou ceux qui sont facilement identifiables, l’incertitude est réduite en tirant parti de la fréquence d’apparition et de l’expérience du domaine.</p>
+<p>La meilleure façon de vérifier les résultats de ce rapport est de mener une enquête dans votre région. La plupart des objets sont reconnaissables. Pour les objets brisés ou fragmentés, il existe des fourchettes de taille que nous utilisons pour séparer les différents objets. Notez que l’hypothèse de base est le nombre minimum. Par conséquent, nous nous attendons en général à trouver plus que la valeur médiane ou moyenne affichée ici.</p>
+</div>
+<div class="section" id="contexte">
+<h4>Contexte<a class="headerlink" href="#contexte" title="Permalink to this heading">#</a></h4>
+<p>La mesure de la densité et du transport hydrologique des déchets est un domaine en pleine évolution. En Suisse, nous avons utilisé les différences structurelles entre les sites d’étude pour identifier les zones d’accumulation. Il s’agit d’une collaboration avec des chercheurs de l’UNIGE, PSI, l’EPFL, hammerdirt et de l’Université de Wagenigen (<a class="reference external" href="https://www.wur.nl/en/research-results/chair-groups/environmental-sciences/hydrology-and-environmental-hydraulics-group.htm">Wagenigen</a>), le manuscrit a récemment été soumis à une évaluation par les pairs <a class="reference external" href="https://hammerdirt-analyst.github.io/landuse/probability.html">Near of Far</a>.</p>
+<p>L’Union européenne a proposé des valeurs seuils pour la densité des déchets sur les plages. Ces seuils ne sont pas obligatoires, ils sont basés sur le principe de précaution avec l’intention de limiter l’exposition aux plastiques (<a class="reference external" href="https://mcc.jrc.ec.europa.eu/main/dev.py?N=41&amp;O=453">Eu threshold</a>). Les données pour cette décision au niveau continental ont été collectées en utilisant le même protocole que celui utilisé sur le Lac Léman 2015. En outre, à l’instar des données analysées par l’UE, les données ont été collectées par différents groupes au fil du temps (<a class="reference external" href="https://hammerdirt-analyst.github.io/solid-waste-team/summary_2015_2021.html">Solid waste Team</a>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>C’est ici que nous expliquons ce que ces résultats ont à voir avec les objectifs et les stratégies du canton dans ce domaine.</p>
+<p>Plus loin dans le rapport, cela permet de définir les objets et les lieux d’intérêt. répondre à la question suivante</p>
+</div>
+</div>
+</div>
+<div class="section" id="structure">
+<h3>Structure<a class="headerlink" href="#structure" title="Permalink to this heading">#</a></h3>
+<p>Conformément au contexte dans lequel les données ont été collectées et à la manière dont elles ont été présentées à l’origine dans l’IQAASL, le rapport cantonal commence par une région d’intérêt.</p>
+<ol class="arabic simple">
+<li><p>Variables aléatoires</p>
+<ul class="simple">
+<li><p>Présentation des données</p></li>
+</ul>
+</li>
+<li><p>Présentation des données cantonales</p>
+<ul class="simple">
+<li><p>pour chaque canton</p>
+<ul>
+<li><p>agrégées à l’échelle de la commune</p></li>
+<li><p>lac</p></li>
+<li><p>rivière</p></li>
+<li><p>montagne</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Revue des résultats pour lac leman</p>
+<ul class="simple">
+<li><p>a compléter</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>À ce niveau, nous considérons la municipalité comme l’unité de base. En d’autres termes, les résultats des sites individuels ne seront pas présentés ici. La manière de présenter les résultats des communes est un sujet qui pourrait être mieux défini une fois que les exigences cantonales auront été comprises.</p>
+<p>Cela pourrait avoir des effets en amont sur le rapport fédéral. En effet, le rôle du rapport fédéral est de faciliter le processus de prise de décision au niveau cantonal. Une fois qu’un consensus est atteint entre les acteurs cantonaux, le traitement des données peut être automatisé dans une large mesure. Ce qui faciliterait grandement la production des futures versions de ce rapport.</p>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="random_variables.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Les variables aléatoires</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif">Objectif</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#densite-des-dechets-le-long-des-sentiers-des-rivieres-et-des-lacs">Densité des déchets le long des sentiers, des rivières et des lacs.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contexte">Contexte</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By team@
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+   hammerdirt 2023
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
