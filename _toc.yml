@@ -7,6 +7,7 @@ options:
     numbered: True
 chapters:
 - file: random_variables
+- file: le_leman
 - file: valais
 - file: vaud
 - file: geneve
